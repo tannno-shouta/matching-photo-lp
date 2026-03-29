@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Button } from '../ui/Button';
@@ -32,6 +32,11 @@ export function Header() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
+      {/* スクロール時のゴールドアクセントライン */}
+      <div
+        className={`absolute top-0 left-0 right-0 h-0.5 transition-opacity duration-300 ${isScrolled ? 'opacity-100' : 'opacity-0'}`}
+        style={{ background: 'linear-gradient(90deg, transparent, #C9A96E 30%, #E8C97A 50%, #C9A96E 70%, transparent)' }}
+      />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* ロゴ */}
         <Link href="/" className={`font-bold text-lg tracking-tight ${isScrolled ? 'text-[#1A2744]' : 'text-white'}`}

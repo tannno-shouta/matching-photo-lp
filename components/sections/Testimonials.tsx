@@ -25,9 +25,9 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-white rounded-2xl p-5 text-center shadow-sm border border-[#E5E7EB]"
+              className="bg-white rounded-2xl p-5 text-center shadow-sm border border-[#E5E7EB] hover:border-[#C9A96E]/40 hover:shadow-md transition-all duration-300"
             >
-              <p className="text-3xl font-bold text-[#1A2744]">
+              <p className="text-3xl font-bold" style={{ background: 'linear-gradient(135deg, #C9A96E 0%, #E8C97A 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                 <AnimatedCounter
                   value={stat.value}
                   suffix={stat.suffix}

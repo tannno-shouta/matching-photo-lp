@@ -36,6 +36,12 @@ h1, h2, h3, h4 {
   font-family: var(--font-heading);
 }
 
+/* テキスト選択色 */
+::selection {
+  background-color: #C9A96E40;
+  color: #1A2744;
+}
+
 /* スクロールバー非表示（カルーセル用） */
 .scrollbar-hide {
   -ms-overflow-style: none;
@@ -43,4 +49,38 @@ h1, h2, h3, h4 {
 }
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* ノイズテクスチャオーバーレイ */
+.bg-noise {
+  position: relative;
+}
+.bg-noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ゴールドグラデーション文字 */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #C9A96E 0%, #E8C97A 50%, #C9A96E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* diagonal ストライプパターン背景 */
+.bg-diagonal-lines {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 20px,
+    rgba(201, 169, 110, 0.04) 20px,
+    rgba(201, 169, 110, 0.04) 21px
+  );
 }

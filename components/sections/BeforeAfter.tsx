@@ -4,10 +4,27 @@ import { motion } from 'framer-motion';
 import { BeforeAfterSlider } from '../ui/BeforeAfterSlider';
 import { SectionHeading } from '../ui/SectionHeading';
 
+const METRICS = [
+  { label: 'いいね数', before: '3件/日', after: '11件/日' },
+  { label: 'マッチ率', before: '5%', after: '28%' },
+  { label: '返信率', before: '20%', after: '65%' },
+];
+
 export function BeforeAfter() {
   return (
-    <section className="py-20 px-4 bg-[#1A2744]" id="before-after">
-      <div className="max-w-4xl mx-auto">
+    <section className="relative py-20 px-4 bg-[#1A2744] overflow-hidden" id="before-after">
+      {/* diagonal ストライプパターン */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'repeating-linear-gradient(-45deg, transparent, transparent 30px, rgba(201,169,110,0.04) 30px, rgba(201,169,110,0.04) 31px)',
+        }}
+      />
+
+      {/* 右上の装飾円 */}
+      <div className="absolute top-0 right-0 w-96 h-96 rounded-full border border-[#C9A96E]/8 -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+
+      <div className="relative z-10 max-w-4xl mx-auto">
         <SectionHeading
           eyebrow="Before / After"
           title="こんなに変わります"
@@ -20,7 +37,7 @@ export function BeforeAfter() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.7 }}
-          className="max-w-2xl mx-auto mb-8"
+          className="max-w-2xl mx-auto mb-10"
         >
           <BeforeAfterSlider
             beforeSrc="/images/before-after/before.jpg"
@@ -28,28 +45,39 @@ export function BeforeAfter() {
             beforeAlt="撮影前：スマホ自撮り"
             afterAlt="撮影後：プロロケーション撮影"
           />
-          <p className="text-center text-white/50 text-sm mt-4">
-            ← スライダーを左右に動かして比較してください →
+          <p className="text-center text-white/40 text-xs mt-3 tracking-widest uppercase">
+            ← drag to compare →
           </p>
         </motion.div>
 
+        {/* メトリクス — 大きな数字で訴求 */}
         <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto text-center">
-          {[
-            { label: 'いいね数', before: '3件/日', after: '11件/日' },
-            { label: 'マッチ率', before: '5%', after: '28%' },
-            { label: '返信率', before: '20%', after: '65%' },
-          ].map((item, i) => (
+          {METRICS.map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="bg-white/10 rounded-xl p-4"
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="relative bg-white/8 border border-white/10 rounded-2xl p-4 overflow-hidden group hover:border-[#C9A96E]/40 transition-colors duration-300"
             >
-              <p className="text-[#C9A96E] text-xs font-bold mb-2">{item.label}</p>
-              <p className="text-white/60 text-sm line-through">{item.before}</p>
-              <p className="text-white text-lg font-bold">→ {item.after}</p>
+              {/* ゴールドの上ボーダー */}
+              <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#C9A96E]/50 to-transparent" />
+
+              <p className="text-[#C9A96E] text-[10px] font-bold mb-3 tracking-widest uppercase">{item.label}</p>
+              <p className="text-white/40 text-xs line-through mb-1">{item.before}</p>
+              <p
+                className="font-bold leading-none"
+                style={{
+                  fontSize: 'clamp(1.25rem, 3vw, 1.75rem)',
+                  background: 'linear-gradient(135deg, #C9A96E 0%, #E8C97A 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+              >
+                {item.after}
+              </p>
             </motion.div>
           ))}
         </div>

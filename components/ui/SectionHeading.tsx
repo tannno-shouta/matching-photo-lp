@@ -47,7 +47,10 @@ export function SectionHeading({
           {subtitle}
         </p>
       )}
-      <div className={`mt-4 h-1 w-16 bg-[#C9A96E] rounded-full ${center ? 'mx-auto' : ''}`} />
+      <div
+        className={`mt-5 h-[3px] w-20 rounded-full ${center ? 'mx-auto' : ''}`}
+        style={{ background: 'linear-gradient(90deg, #C9A96E 0%, #E8C97A 60%, #C9A96E 100%)' }}
+      />
     </motion.div>
   );
 }

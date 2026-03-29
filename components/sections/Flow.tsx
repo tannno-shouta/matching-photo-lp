@@ -17,8 +17,8 @@ export function Flow() {
         />
 
         <div className="relative">
-          {/* 縦線 */}
-          <div className="absolute left-6 sm:left-8 top-6 bottom-6 w-0.5 bg-[#E5E7EB]" />
+          {/* ゴールドの縦線 */}
+          <div className="absolute left-6 sm:left-8 top-6 bottom-6 w-0.5 bg-gradient-to-b from-[#C9A96E]/60 via-[#C9A96E]/40 to-transparent" />
 
           <div className="space-y-6">
             {FLOW_STEPS.map((step, i) => (
@@ -28,17 +28,32 @@ export function Flow() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
-                className="flex gap-6 relative"
+                className="flex gap-5 sm:gap-6 relative"
               >
-                {/* アイコン */}
-                <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 bg-[#1A2744] rounded-full flex items-center justify-center text-xl sm:text-2xl shadow-md z-10">
-                  {step.icon}
+                {/* ステップバッジ — 大きく */}
+                <div className="relative flex-shrink-0 z-10">
+                  <div
+                    className="w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-xl sm:text-2xl shadow-lg"
+                    style={{
+                      background: 'linear-gradient(135deg, #1A2744 0%, #243560 100%)',
+                      boxShadow: '0 0 0 3px rgba(201,169,110,0.3), 0 4px 16px rgba(26,39,68,0.3)',
+                    }}
+                  >
+                    {step.icon}
+                  </div>
+                  {/* ステップ番号 */}
+                  <div
+                    className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold text-white"
+                    style={{ background: 'linear-gradient(135deg, #C9A96E 0%, #E8C97A 100%)' }}
+                  >
+                    {step.step}
+                  </div>
                 </div>
 
-                <div className="bg-[#FAFAF8] rounded-2xl p-5 flex-1 border border-[#E5E7EB]">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="text-[#C9A96E] font-bold text-sm tracking-widest">STEP {step.step}</span>
-                  </div>
+                <div className="bg-[#FAFAF8] rounded-2xl p-5 flex-1 border border-[#E5E7EB] hover:border-[#C9A96E]/30 hover:shadow-sm transition-all duration-300">
+                  <span className="text-[#C9A96E] font-bold text-xs tracking-widest uppercase block mb-2">
+                    Step {step.step}
+                  </span>
                   <h3 className="font-bold text-[#1A2744] mb-1">{step.title}</h3>
                   <p className="text-[#6B7280] text-sm leading-relaxed">{step.description}</p>
                 </div>

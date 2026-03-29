@@ -15,7 +15,7 @@ export function PainPoints() {
         />
 
         {/* NG例 */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           {PAIN_POINTS.map((point, i) => (
             <motion.div
               key={i}
@@ -23,15 +23,18 @@ export function PainPoints() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="bg-[#FFF5F5] border border-red-100 rounded-2xl p-5"
+              className="relative bg-[#FFF5F5] border border-red-100 rounded-2xl p-5 overflow-hidden"
             >
+              {/* NG バッジ */}
+              <div className="absolute top-3 right-3 w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center font-bold text-xs leading-none">
+                NG
+              </div>
               <div className="flex items-start gap-3">
-                <span className="text-2xl">{point.icon}</span>
+                <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 text-xl">
+                  {point.icon}
+                </div>
                 <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-red-500 font-bold text-lg">✕</span>
-                    <p className="font-bold text-[#1A2744] text-sm">{point.title}</p>
-                  </div>
+                  <p className="font-bold text-[#1A2744] text-sm mb-1">{point.title}</p>
                   <p className="text-[#6B7280] text-sm leading-relaxed">{point.description}</p>
                 </div>
               </div>
@@ -39,22 +42,29 @@ export function PainPoints() {
           ))}
         </div>
 
-        {/* 橋渡し */}
+        {/* 橋渡し区切り */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10"
+          className="relative text-center mb-12"
         >
-          <div className="inline-block bg-[#1A2744] text-white text-sm font-bold px-6 py-2 rounded-full mb-8">
-            マッチングアプリでいいねされる写真には、共通する法則がある
+          {/* 区切りライン */}
+          <div className="flex items-center gap-4 mb-8">
+            <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[#C9A96E]/40" />
+            <div className="bg-[#1A2744] text-white text-xs font-bold px-5 py-2.5 rounded-full tracking-widest">
+              マッチする写真には共通の法則がある
+            </div>
+            <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[#C9A96E]/40" />
           </div>
-          <h3 className="text-2xl font-bold text-[#1A2744] mb-8" style={{ fontFamily: 'var(--font-heading)' }}>
+
+          <h3 className="text-2xl font-bold text-[#1A2744]" style={{ fontFamily: 'var(--font-heading)' }}>
             女性が本能的に好む<span className="text-[#C9A96E]">3つの要素</span>
           </h3>
         </motion.div>
 
+        {/* OK例 */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {MATCH_POINTS.map((point, i) => (
             <motion.div
@@ -63,10 +73,16 @@ export function PainPoints() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="bg-[#F0FFF4] border border-green-100 rounded-2xl p-5"
+              className="relative bg-[#F0FFF4] border border-green-100 rounded-2xl p-5 overflow-hidden"
             >
+              {/* OK バッジ */}
+              <div className="absolute top-3 right-3 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-xs leading-none">
+                OK
+              </div>
               <div className="flex items-start gap-3">
-                <span className="text-2xl">{point.icon}</span>
+                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 text-xl">
+                  {point.icon}
+                </div>
                 <p className="text-[#1A1A1A] text-sm leading-relaxed font-medium">{point.text}</p>
               </div>
             </motion.div>
