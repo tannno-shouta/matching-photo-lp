@@ -1,12 +1,20 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useRef } from 'react';
 import { STATS, TESTIMONIALS } from '@/lib/constants';
 import { SectionHeading } from '../ui/SectionHeading';
 import { TestimonialCard } from '../ui/TestimonialCard';
 import { AnimatedCounter } from '../ui/AnimatedCounter';
 
 export function Testimonials() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (dir: 'left' | 'right') => {
+    if (!scrollRef.current) return;
+    scrollRef.current.scrollBy({ left: dir === 'right' ? 340 : -340, behavior: 'smooth' });
+  };
+
   return (
     <section className="py-20 px-4 bg-[#FAFAF8]" id="testimonials">
       <div className="max-w-5xl mx-auto">
@@ -39,14 +47,39 @@ export function Testimonials() {
           ))}
         </div>
 
-        {/* カルーセル（横スクロール） */}
-        <div className="overflow-x-auto pb-4 scrollbar-hide">
-          <div className="flex gap-4 w-max">
-            {TESTIMONIALS.map((t, i) => (
-              <TestimonialCard key={i} {...t} index={i} />
-            ))}
+        {/* カルーセル + 矢印ボタン */}
+        <div className="relative">
+          {/* 左矢印 */}
+          <button
+            onClick={() => scroll('left')}
+            className="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white border border-[#E5E7EB] rounded-full shadow-md items-center justify-center text-[#1A2744] hover:border-[#C9A96E] hover:text-[#C9A96E] transition-colors duration-200"
+            aria-label="前へ"
+          >
+            <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+
+          {/* 右矢印 */}
+          <button
+            onClick={() => scroll('right')}
+            className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white border border-[#E5E7EB] rounded-full shadow-md items-center justify-center text-[#1A2744] hover:border-[#C9A96E] hover:text-[#C9A96E] transition-colors duration-200"
+            aria-label="次へ"
+          >
+            <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+
+          <div ref={scrollRef} className="overflow-x-auto pb-4 scrollbar-hide">
+            <div className="flex gap-4 w-max">
+              {TESTIMONIALS.map((t, i) => (
+                <TestimonialCard key={i} {...t} index={i} />
+              ))}
+            </div>
           </div>
         </div>
+
         <p className="text-center text-[#6B7280] text-xs mt-3">← 横にスクロールできます →</p>
       </div>
     </section>
