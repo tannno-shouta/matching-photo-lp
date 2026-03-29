@@ -66,7 +66,7 @@ export function BeforeAfterSlider({
       {/* Before（左側・クリップ表示） */}
       <div className="absolute inset-0 overflow-hidden" style={{ width: `${position}%` }}>
         <div className="absolute inset-0" style={{ width: containerRef.current?.offsetWidth ?? 600 }}>
-          <Image src={beforeSrc} alt={beforeAlt} fill className="object-cover object-top" />
+          <Image src={beforeSrc} alt={beforeAlt} fill className="object-cover object-[center_20%]" />
         </div>
         <div className="absolute bottom-4 left-4 bg-[#6B7280] text-white text-xs font-bold px-3 py-1 rounded-full">
           Before
