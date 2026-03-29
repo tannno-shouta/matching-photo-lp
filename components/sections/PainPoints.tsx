@@ -29,7 +29,7 @@ export function PainPoints() {
               <div className="absolute top-3 right-3 w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center font-bold text-xs leading-none">
                 NG
               </div>
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-3 pr-8">
                 <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 text-xl">
                   {point.icon}
                 </div>
@@ -79,7 +79,7 @@ export function PainPoints() {
               <div className="absolute top-3 right-3 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-xs leading-none">
                 OK
               </div>
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-3 pr-8">
                 <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 text-xl">
                   {point.icon}
                 </div>
