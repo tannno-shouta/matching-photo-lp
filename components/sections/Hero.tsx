@@ -22,7 +22,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-br from-[#0d1f3c] via-[#1A2744] to-[#1e2d50]" />
 
       {/* 背景画像オーバーレイ */}
-      <div className="absolute inset-0 bg-[url('/images/hero/hero-bg.jpg')] bg-cover bg-center opacity-25" />
+      <div className="absolute inset-0 bg-[url('/images/hero/hero-bg.jpg')] bg-cover opacity-25" style={{ backgroundPosition: 'center 30%' }} />
 
       {/* ノイズテクスチャ */}
       <div
