@@ -31,16 +31,17 @@ export function PricingCard({
       whileInView={{ opacity: 1, y: 0, rotate: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.5, delay: index * 0.15 }}
-      className={`relative rounded-2xl p-6 flex flex-col overflow-hidden ${
+      className={`relative rounded-2xl p-6 flex flex-col ${
         isRecommended
           ? 'bg-[#1A2744] text-white shadow-2xl scale-105 ring-2 ring-[#C9A96E]'
           : 'bg-white text-[#1A1A1A] shadow-md border border-[#E5E7EB] hover:border-[#C9A96E]/30 hover:shadow-lg transition-all duration-300'
       }`}
     >
+      {/* 背景パターンは overflow-hidden なし版のため疑似要素ではなく内側 div で対応 */}
       {/* おすすめプランの背景パターン */}
       {isRecommended && (
         <div
-          className="absolute inset-0 pointer-events-none opacity-30"
+          className="absolute inset-0 pointer-events-none opacity-30 rounded-2xl overflow-hidden"
           style={{
             backgroundImage: 'repeating-linear-gradient(-45deg, transparent, transparent 24px, rgba(201,169,110,0.06) 24px, rgba(201,169,110,0.06) 25px)',
           }}
@@ -65,7 +66,7 @@ export function PricingCard({
         </>
       )}
 
-      <div className="relative z-10 mb-6 mt-2">
+      <div className={`relative z-10 mb-6 ${isRecommended ? 'mt-6' : 'mt-0'}`}>
         <p className={`text-xs font-bold tracking-widest uppercase mb-3 ${isRecommended ? 'text-[#C9A96E]' : 'text-[#6B7280]'}`}>
           {name}
         </p>
