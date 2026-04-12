@@ -68,12 +68,11 @@ export function Hero() {
         {/* メインコピー */}
         <motion.h1
           variants={itemVariants}
-          className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6"
+          className="text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] font-bold leading-snug mb-6"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
           福岡で選ばれてNo.1。<br />
           <span
-            className="text-gold-gradient"
             style={{
               background: 'linear-gradient(135deg, #C9A96E 0%, #E8C97A 50%, #C9A96E 100%)',
               WebkitBackgroundClip: 'text',
@@ -81,7 +80,19 @@ export function Hero() {
               backgroundClip: 'text',
             }}
           >
-            「美容師の感性」×「コンサルの分析力」
+            「美容師の感性」×
+          </span>
+          {/* SP: ×の後で改行 / PC(md+): 改行なしで1行に収める */}
+          <br className="md:hidden" />
+          <span
+            style={{
+              background: 'linear-gradient(135deg, #C9A96E 0%, #E8C97A 50%, #C9A96E 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}
+          >
+            「コンサルの分析力」
           </span>で、<br />
           出会いの結果を変える最高の一枚を。
         </motion.h1>
