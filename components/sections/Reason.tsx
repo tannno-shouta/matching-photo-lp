@@ -27,7 +27,7 @@ export function Reason() {
         <SectionHeading
           eyebrow="Why Us"
           title="選ばれる3つの理由"
-          subtitle="「いいね数が増えた」「マッチして付き合った」── お客様の結果にコミットするための、3つのこだわり。"
+          subtitle="「2週間で5人とデート」「付き合いました」── 500名の実績が証明する3つのこだわり。"
         />
 
         <div className="space-y-6">

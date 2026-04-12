@@ -29,7 +29,7 @@ export function Testimonials() {
         <SectionHeading
           eyebrow="Testimonials"
           title="お客様の声・実績"
-          subtitle="「自分と似た人も成功している」── リアルな声をご覧ください。"
+          subtitle="「2週間で5人とデート」「付き合いました」── あなたと同じ悩みを持っていた男性たちの、リアルな結果です。"
           light
         />
 

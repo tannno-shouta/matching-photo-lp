@@ -5,10 +5,10 @@ import { Button } from '../ui/Button';
 import { LINE_URL } from '@/lib/constants';
 
 const TRUST_ITEMS = [
-  '✓ 相談・見積もり無料',
-  '✓ キャンセル料なし',
-  '✓ 24時間以内返信',
-  '✓ 写真が苦手でも大丈夫',
+  '✓ 相談・見積もり完全無料',
+  '✓ キャンセル料なし（前日まで）',
+  '✓ 24時間以内に返信',
+  '✓ 写真が苦手な男性も多数実績あり',
 ];
 
 export function BottomCTA() {
@@ -44,7 +44,7 @@ export function BottomCTA() {
               style={{ background: 'linear-gradient(135deg, #C9A96E 0%, #E8C97A 100%)' }}
             >
               <span className="w-2 h-2 bg-[#1A2744]/40 rounded-full" />
-              今月残り3枠のみ
+              今月残り3枠 ── 次の枠は来月以降になります
             </span>
           </div>
 
@@ -52,7 +52,7 @@ export function BottomCTA() {
             className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            まずは
+            写真を変えれば、
             <span
               style={{
                 background: 'linear-gradient(135deg, #C9A96E 0%, #E8C97A 50%, #C9A96E 100%)',
@@ -61,15 +61,14 @@ export function BottomCTA() {
                 backgroundClip: 'text',
               }}
             >
-              無料相談
-            </span>
-            から<br />
-            始めてみませんか？
+              いいねが変わる。
+            </span><br />
+            まず無料相談してみてください。
           </h2>
 
           <p className="text-white/80 text-lg mb-4 leading-relaxed">
-            写真が苦手でも、カメラが初めてでも大丈夫。<br />
-            会話しながら撮影するから、<strong className="text-white">緊張せずに自然な笑顔</strong>が引き出せます。
+            500名以上の男性が、写真1枚でいいね数を変えてきました。<br />
+            あなたも、<strong className="text-white">今月中に動けば</strong>来月のいいね数が変わります。
           </p>
 
           <p className="text-white/40 text-sm mb-10 tracking-wide">

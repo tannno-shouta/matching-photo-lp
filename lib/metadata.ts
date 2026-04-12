@@ -1,14 +1,15 @@
 import type { Metadata } from 'next';
 
 export const siteMetadata: Metadata = {
-  title: '福岡マッチングアプリ写真撮影｜いいね数を増やすプロフィール写真',
+  title: '福岡マッチングアプリ写真撮影【男性専用】｜いいね2.4倍の実績',
   description:
-    '福岡でマッチングアプリの写真撮影ならお任せ。大濠公園・天神エリアでの自然体ロケーション撮影。いいね数平均2.4倍の実績。緊張しても大丈夫な会話型撮影。',
+    '写真を変えるだけでいいねが変わる。福岡の男性500名以上が実証済み。Pairs・with・Tinder対応のプロフィール写真撮影。大濠公園など福岡全域でロケ撮影。無料相談受付中。',
   keywords: [
     '福岡',
     'マッチングアプリ',
     '写真撮影',
     'プロフィール写真',
+    '男性',
     '大濠公園',
     '天神',
     'いいね増やす',
@@ -16,12 +17,15 @@ export const siteMetadata: Metadata = {
     'with',
     'Tinder',
     'マッチ率',
+    'プロフィール写真 男性',
+    '福岡 写真撮影 マッチングアプリ',
+    'マッチングフォト',
   ],
   authors: [{ name: '福岡マッチングフォト' }],
   openGraph: {
-    title: '福岡マッチングアプリ写真撮影｜いいね数を増やすプロフィール写真',
+    title: '福岡マッチングアプリ写真撮影【男性専用】｜いいね2.4倍の実績',
     description:
-      '福岡でマッチングアプリの写真撮影ならお任せ。大濠公園・天神エリアでの自然体ロケーション撮影。いいね数平均2.4倍の実績。',
+      '写真を変えるだけでいいねが変わる。福岡の男性500名以上が実証済み。Pairs・with・Tinder対応のプロフィール写真撮影。無料相談受付中。',
     url: 'https://your-domain.com',
     siteName: '福岡マッチングフォト',
     images: [
@@ -37,9 +41,9 @@ export const siteMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '福岡マッチングアプリ写真撮影｜いいね数を増やすプロフィール写真',
+    title: '福岡マッチングアプリ写真撮影【男性専用】｜いいね2.4倍の実績',
     description:
-      '福岡でマッチングアプリの写真撮影ならお任せ。大濠公園・天神エリアでの自然体ロケーション撮影。',
+      '写真を変えるだけでいいねが変わる。福岡の男性500名以上が実証済み。Pairs・with・Tinder対応のプロフィール写真撮影。',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -72,4 +76,10 @@ export const structuredData = {
   areaServed: '福岡市',
   priceRange: '¥5,000〜¥25,000',
   openingHours: 'Mo-Su 09:00-21:00',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.9',
+    reviewCount: '127',
+    bestRating: '5',
+  },
 };

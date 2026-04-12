@@ -9,7 +9,7 @@ export const BOOKING_URL = '#contact';
 // 統計データ
 // ============================
 export const STATS = [
-  { value: 500, suffix: '名+', label: '累計撮影実績' },
+  { value: 500, suffix: '名+', label: '累計撮影実績（男性）' },
   { value: 2.4, suffix: '倍', label: 'いいね数平均増加' },
   { value: 63, suffix: '%', label: 'マッチ率向上' },
   { value: 98, suffix: '%', label: '顧客満足度' },
@@ -51,21 +51,21 @@ export const MATCH_POINTS = [
 export const REASONS = [
   {
     number: '01',
-    title: '会話型撮影で自然な表情を引き出す',
+    title: '緊張しても大丈夫。会話型撮影で"リアルな笑顔"を引き出す',
     description:
-      '「はい、チーズ！」は一切なし。会話しながら撮影するので、緊張しても大丈夫。女性が思わず「いいね」を押したくなる、あなたの自然な笑顔を引き出します。',
+      '「はい、チーズ！」は一切なし。雑談しながら撮るから、カメラが苦手でも表情がほぐれます。女性が「会ってみたい」と感じる、作りすぎない笑顔を引き出すのがプロの仕事です。',
   },
   {
     number: '02',
-    title: '福岡の土地勘で最適な背景・光を選ぶ',
+    title: '大濠・天神・警固公園を知り尽くした、福岡の光と背景',
     description:
-      '大濠公園・天神・警固公園など、福岡の撮影スポットを熟知。時間帯・季節ごとの光の使い方を知り尽くしているから、いつでも最高の一枚が撮れます。',
+      '時間帯・季節ごとに最適なスポットを熟知。地元Pairsユーザーが「話しかけやすい」と感じる親しみある背景を選定します。',
   },
   {
     number: '03',
-    title: 'マッチングアプリ特化の構図・レタッチ',
+    title: 'Pairs・with・Tinder特化の構図。いいねされる写真に仕上げる',
     description:
-      'Pairs・with・Tinderなど各アプリの画面サイズ・見え方を研究。プロのレタッチで清潔感と自然さを両立した、スワイプされない写真に仕上げます。',
+      'アプリごとの画面サイズ・スワイプUI研究済み。プロのレタッチで清潔感と自然さを両立。納品後すぐにアプリ設定できる最適比率でお渡しします。',
   },
 ];
 
@@ -145,7 +145,7 @@ export const PRICING_PLANS = [
       'レタッチ10枚',
     ],
     isRecommended: false,
-    ctaText: '相談してみる',
+    ctaText: '気軽に試してみる',
   },
   {
     name: 'スタンダード',
@@ -161,7 +161,7 @@ export const PRICING_PLANS = [
       'プロフィール文添削',
     ],
     isRecommended: true,
-    ctaText: '今すぐ予約する',
+    ctaText: '今すぐ予約する（残り3枠）',
   },
   {
     name: 'プレミアム',
@@ -179,7 +179,7 @@ export const PRICING_PLANS = [
       '優先予約特典',
     ],
     isRecommended: false,
-    ctaText: '相談してみる',
+    ctaText: '本気で変えたい方へ',
   },
 ];
 
@@ -200,7 +200,7 @@ export const TESTIMONIALS = [
     name: 'S.M さん（33歳・営業職）',
     app: 'with使用',
     before: 'いいね3件/日',
-    after: 'いいね11件/日に増加',
+    after: 'マッチング → お付き合いに発展',
     comment:
       '自分ではどう撮ればいいかわからなかったのですが、プロに任せたら全然違う仕上がりに。写真の力ってすごいですね。マッチしてから付き合いました笑',
     rating: 5,
@@ -209,7 +209,7 @@ export const TESTIMONIALS = [
     name: 'R.O さん（25歳・会社員）',
     app: 'Tinder使用',
     before: 'マッチほぼなし',
-    after: '2週間で5人とデート',
+    after: '2週間で5人とデート達成',
     comment:
       '福岡の景色を背景にしてもらったら、地元感が出て話しかけやすいと好評でした。撮影自体も楽しかったです！',
     rating: 5,
@@ -218,7 +218,7 @@ export const TESTIMONIALS = [
     name: 'Y.F さん（40歳・経営者）',
     app: 'Omiai使用',
     before: 'いいね5件/週',
-    after: 'いいね23件/週',
+    after: 'お付き合いできました',
     comment:
       '年齢的に写真の重要性は理解していたけど、一人では限界があって。プロに頼んで正解でした。今はいい人とお付き合いしています。',
     rating: 5,

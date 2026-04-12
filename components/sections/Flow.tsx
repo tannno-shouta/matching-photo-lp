@@ -40,7 +40,7 @@ export function Flow() {
         <SectionHeading
           eyebrow="Flow"
           title="撮影の流れ"
-          subtitle="LINEで気軽に相談するだけ。最短3日で予約完了、当日は会話しながらリラックスして撮影できます。"
+          subtitle="LINEで相談するだけ。最短3日で予約完了。撮影後3〜5日で写真が届き、その日からいいねが変わり始めます。"
         />
 
         <div className="relative">

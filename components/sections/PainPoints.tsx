@@ -10,8 +10,8 @@ export function PainPoints() {
       <div className="max-w-4xl mx-auto">
         <SectionHeading
           eyebrow="Problem"
-          title="その写真、マッチしない理由があります"
-          subtitle="マッチングアプリで「いいね」が来ない原因の90%は写真にあります。あなたはこんな写真を使っていませんか？"
+          title="あなたの写真、マッチしない理由があります"
+          subtitle="マッチングアプリで「いいね」が増えない男性の9割は、写真が原因です。心当たりのある写真はありますか？"
         />
 
         {/* NG例 */}

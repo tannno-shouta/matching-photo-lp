@@ -61,7 +61,7 @@ export function Hero() {
         <motion.div variants={itemVariants} className="mb-6">
           <span className="inline-flex items-center gap-2 bg-[#C9A96E]/15 border border-[#C9A96E]/50 text-[#C9A96E] text-sm font-bold px-5 py-2.5 rounded-full tracking-widest uppercase">
             <span className="w-1.5 h-1.5 bg-[#C9A96E] rounded-full animate-pulse inline-block" />
-            福岡No.1 マッチングアプリ写真撮影
+            福岡No.1 男性向けマッチングアプリ写真撮影
           </span>
         </motion.div>
 
@@ -71,8 +71,7 @@ export function Hero() {
           className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
-          福岡で、<br className="sm:hidden" />
-          マッチングアプリの<br />
+          いいねが来ない原因は、<br />
           <span
             className="text-gold-gradient"
             style={{
@@ -82,8 +81,8 @@ export function Hero() {
               backgroundClip: 'text',
             }}
           >
-            顔を変える。
-          </span>
+            写真の9割
+          </span>にある。
         </motion.h1>
 
         {/* サブコピー */}
@@ -91,14 +90,13 @@ export function Hero() {
           variants={itemVariants}
           className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-4 leading-relaxed"
         >
-          緊張しても大丈夫。会話しながら撮るから、<br className="hidden sm:block" />
-          あなたの<strong className="text-white">自然な笑顔</strong>が引き出される。
+          プロが撮れば変わる ── <strong className="text-white">福岡500名の男性</strong>が証明した。
         </motion.p>
         <motion.p
           variants={itemVariants}
           className="text-base text-white/50 mb-10 tracking-wide"
         >
-          大濠公園・天神・警固公園など福岡の人気スポットでロケーション撮影
+          大濠公園・天神・警固公園。会話しながら撮るから、緊張しても自然な笑顔が引き出せます。
         </motion.p>
 
         {/* CTA */}
@@ -110,6 +108,11 @@ export function Hero() {
             料金を見る
           </Button>
         </motion.div>
+
+        {/* マイクロコピー */}
+        <motion.p variants={itemVariants} className="text-white/40 text-xs -mt-8 mb-4 text-center">
+          返信24時間以内 ・ 相談無料 ・ 予約はLINEで完結
+        </motion.p>
 
         {/* 実績バッジ */}
         <motion.div
