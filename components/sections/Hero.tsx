@@ -71,7 +71,7 @@ export function Hero() {
           className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
-          いいねが来ない原因は、<br />
+          福岡で選ばれてNo.1。<br />
           <span
             className="text-gold-gradient"
             style={{
@@ -81,8 +81,9 @@ export function Hero() {
               backgroundClip: 'text',
             }}
           >
-            写真の9割
-          </span>にある。
+            「美容師の感性」×「コンサルの分析力」
+          </span>で、<br />
+          出会いの結果を変える最高の一枚を。
         </motion.h1>
 
         {/* サブコピー */}
