@@ -16,12 +16,21 @@ export function Testimonials() {
   };
 
   return (
-    <section className="py-20 px-4 bg-[#FAFAF8]" id="testimonials">
-      <div className="max-w-5xl mx-auto">
+    <section className="relative py-20 px-4 bg-[#0d1f3c] overflow-hidden" id="testimonials">
+      {/* diagonal ストライプパターン */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'repeating-linear-gradient(-45deg, transparent, transparent 30px, rgba(201,169,110,0.04) 30px, rgba(201,169,110,0.04) 31px)',
+        }}
+      />
+
+      <div className="relative z-10 max-w-5xl mx-auto">
         <SectionHeading
           eyebrow="Testimonials"
           title="お客様の声・実績"
           subtitle="「自分と似た人も成功している」── リアルな声をご覧ください。"
+          light
         />
 
         {/* カウンター */}
@@ -33,7 +42,7 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-white rounded-2xl p-5 text-center shadow-sm border border-[#E5E7EB] hover:border-[#C9A96E]/40 hover:shadow-md transition-all duration-300"
+              className="bg-white/8 rounded-2xl p-5 text-center border border-white/10 hover:border-[#C9A96E]/40 hover:shadow-md transition-all duration-300"
             >
               <p className="text-3xl font-bold" style={{ background: 'linear-gradient(135deg, #C9A96E 0%, #E8C97A 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                 <AnimatedCounter
@@ -42,7 +51,7 @@ export function Testimonials() {
                   decimals={stat.suffix.includes('倍') ? 1 : 0}
                 />
               </p>
-              <p className="text-[#6B7280] text-xs mt-1">{stat.label}</p>
+              <p className="text-white/60 text-xs mt-1">{stat.label}</p>
             </motion.div>
           ))}
         </div>
@@ -52,7 +61,7 @@ export function Testimonials() {
           {/* 左矢印 */}
           <button
             onClick={() => scroll('left')}
-            className="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white border border-[#E5E7EB] rounded-full shadow-md items-center justify-center text-[#1A2744] hover:border-[#C9A96E] hover:text-[#C9A96E] transition-colors duration-200"
+            className="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/10 border border-white/20 rounded-full shadow-md items-center justify-center text-white/70 hover:border-[#C9A96E]/60 hover:text-[#C9A96E] transition-colors duration-200"
             aria-label="前へ"
           >
             <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -63,7 +72,7 @@ export function Testimonials() {
           {/* 右矢印 */}
           <button
             onClick={() => scroll('right')}
-            className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white border border-[#E5E7EB] rounded-full shadow-md items-center justify-center text-[#1A2744] hover:border-[#C9A96E] hover:text-[#C9A96E] transition-colors duration-200"
+            className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/10 border border-white/20 rounded-full shadow-md items-center justify-center text-white/70 hover:border-[#C9A96E]/60 hover:text-[#C9A96E] transition-colors duration-200"
             aria-label="次へ"
           >
             <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -80,7 +89,7 @@ export function Testimonials() {
           </div>
         </div>
 
-        <p className="text-center text-[#6B7280] text-xs mt-3">← 横にスクロールできます →</p>
+        <p className="text-center text-white/40 text-xs mt-3">← 横にスクロールできます →</p>
       </div>
     </section>
   );

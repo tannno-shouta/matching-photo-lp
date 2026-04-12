@@ -37,17 +37,16 @@ export function BottomCTA() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.7 }}
         >
-          {/* 緊急性バッジ — パルスアニメーション */}
-          <motion.div
-            animate={{ scale: [1, 1.04, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="inline-block mb-8"
-          >
-            <span className="bg-red-500/90 text-white text-sm font-bold px-5 py-2 rounded-full shadow-lg inline-flex items-center gap-2">
-              <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
+          {/* 残枠バッジ — ゴールド */}
+          <div className="inline-block mb-8">
+            <span
+              className="text-[#1A2744] text-sm font-bold px-5 py-2 rounded-full shadow-lg inline-flex items-center gap-2"
+              style={{ background: 'linear-gradient(135deg, #C9A96E 0%, #E8C97A 100%)' }}
+            >
+              <span className="w-2 h-2 bg-[#1A2744]/40 rounded-full" />
               今月残り3枠のみ
             </span>
-          </motion.div>
+          </div>
 
           <h2
             className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6"
@@ -79,7 +78,10 @@ export function BottomCTA() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href={LINE_URL} external variant="cta" size="lg" pulse className="text-lg">
-              <span className="text-2xl">💬</span> LINEで無料相談する
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+              LINEで無料相談する
             </Button>
           </div>
 

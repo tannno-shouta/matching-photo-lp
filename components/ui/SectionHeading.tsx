@@ -26,7 +26,10 @@ export function SectionHeading({
       transition={{ duration: 0.6 }}
     >
       {eyebrow && (
-        <p className="text-[#C9A96E] font-bold tracking-widest text-sm uppercase mb-3">
+        <p
+          className="text-[#C9A96E] font-semibold tracking-widest text-sm uppercase mb-3"
+          style={{ fontFamily: 'var(--font-display)' }}
+        >
           {eyebrow}
         </p>
       )}
@@ -47,10 +50,21 @@ export function SectionHeading({
           {subtitle}
         </p>
       )}
-      <div
-        className={`mt-5 h-[3px] w-20 rounded-full ${center ? 'mx-auto' : ''}`}
-        style={{ background: 'linear-gradient(90deg, #C9A96E 0%, #E8C97A 60%, #C9A96E 100%)' }}
-      />
+      {/* 菱形モチーフ ── ◇ ── */}
+      <div className={`flex items-center gap-3 mt-5 ${center ? 'justify-center' : ''}`}>
+        <div
+          className="h-px flex-1 max-w-[60px]"
+          style={{ background: 'linear-gradient(to left, #C9A96E, transparent)' }}
+        />
+        <div
+          className="w-1.5 h-1.5 rotate-45 flex-shrink-0"
+          style={{ background: 'linear-gradient(135deg, #C9A96E 0%, #E8C97A 100%)' }}
+        />
+        <div
+          className="h-px flex-1 max-w-[60px]"
+          style={{ background: 'linear-gradient(to right, #C9A96E, transparent)' }}
+        />
+      </div>
     </motion.div>
   );
 }

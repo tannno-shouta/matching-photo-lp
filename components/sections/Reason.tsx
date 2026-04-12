@@ -4,7 +4,21 @@ import { motion } from 'framer-motion';
 import { REASONS } from '@/lib/constants';
 import { SectionHeading } from '../ui/SectionHeading';
 
-const ICONS = ['💬', '📍', '🎨'];
+const ICONS: React.ReactNode[] = [
+  // ChatIcon — 会話型撮影
+  <svg key="chat" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+  </svg>,
+  // PinIcon — 福岡の撮影スポット
+  <svg key="pin" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+    <circle cx="12" cy="10" r="3" />
+  </svg>,
+  // DiamondIcon — マッチングアプリ特化
+  <svg key="diamond" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41l-7.59-7.59a2.41 2.41 0 0 0-3.41 0Z" />
+  </svg>,
+];
 
 export function Reason() {
   return (
@@ -53,9 +67,9 @@ export function Reason() {
                 <p className="text-[#6B7280] leading-relaxed text-sm">{reason.description}</p>
               </div>
 
-              {/* アイコン — モバイルでも表示 */}
+              {/* SVGアイコン */}
               <div className="flex-shrink-0 flex items-center pr-5 sm:pr-6">
-                <div className="w-11 h-11 bg-[#1A2744]/5 rounded-full flex items-center justify-center text-2xl">
+                <div className="w-11 h-11 bg-[#1A2744]/5 rounded-full flex items-center justify-center">
                   {ICONS[i]}
                 </div>
               </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Noto_Sans_JP, Noto_Serif_JP } from 'next/font/google';
+import { Noto_Sans_JP, Noto_Serif_JP, Cormorant_Garamond } from 'next/font/google';
 import './globals.css';
 import { siteMetadata, structuredData } from '@/lib/metadata';
 
@@ -17,6 +17,14 @@ const notoSerif = Noto_Serif_JP({
   display: 'swap',
 });
 
+const cormorant = Cormorant_Garamond({
+  variable: '--font-cormorant',
+  subsets: ['latin'],
+  weight: ['400', '600'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+});
+
 export const metadata: Metadata = siteMetadata;
 
 export default function RootLayout({
@@ -27,7 +35,7 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
-      className={`${notoSans.variable} ${notoSerif.variable} h-full`}
+      className={`${notoSans.variable} ${notoSerif.variable} ${cormorant.variable} h-full`}
     >
       <head>
         <script

@@ -23,14 +23,14 @@ export function PainPoints() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="relative bg-[#FFF5F5] border border-red-100 rounded-2xl p-5 overflow-hidden"
+              className="relative bg-[#1A2744]/5 border border-[#1A2744]/20 rounded-2xl p-5 overflow-hidden"
             >
               {/* NG バッジ */}
-              <div className="absolute top-3 right-3 w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center font-bold text-xs leading-none">
+              <div className="absolute top-3 right-3 w-8 h-8 bg-[#1A2744] text-white rounded-full flex items-center justify-center font-bold text-xs leading-none">
                 NG
               </div>
               <div className="flex items-start gap-3 pr-8">
-                <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 text-xl">
+                <div className="w-10 h-10 bg-[#1A2744]/10 rounded-full flex items-center justify-center flex-shrink-0 text-xl">
                   {point.icon}
                 </div>
                 <div>
@@ -73,14 +73,17 @@ export function PainPoints() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="relative bg-[#F0FFF4] border border-green-100 rounded-2xl p-5 overflow-hidden"
+              className="relative bg-[#C9A96E]/8 border border-[#C9A96E]/30 rounded-2xl p-5 overflow-hidden"
             >
               {/* OK バッジ */}
-              <div className="absolute top-3 right-3 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-xs leading-none">
+              <div
+                className="absolute top-3 right-3 w-8 h-8 text-[#1A2744] rounded-full flex items-center justify-center font-bold text-xs leading-none"
+                style={{ background: 'linear-gradient(135deg, #C9A96E 0%, #E8C97A 100%)' }}
+              >
                 OK
               </div>
               <div className="flex items-start gap-3 pr-8">
-                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 text-xl">
+                <div className="w-10 h-10 bg-[#C9A96E]/15 rounded-full flex items-center justify-center flex-shrink-0 text-xl">
                   {point.icon}
                 </div>
                 <p className="text-[#1A1A1A] text-sm leading-relaxed font-medium">{point.text}</p>
