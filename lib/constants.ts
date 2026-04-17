@@ -134,22 +134,8 @@ export const FLOW_STEPS = [
 // ============================
 export const PRICING_PLANS = [
   {
-    name: 'ライト',
-    price: 5000,
-    duration: '30分',
-    photos: 10,
-    features: [
-      '撮影のみ',
-      'ロケーション1箇所',
-      'Web納品（JPEG）',
-      'レタッチ10枚',
-    ],
-    isRecommended: false,
-    ctaText: '気軽に試してみる',
-  },
-  {
     name: 'スタンダード',
-    price: 9000,
+    price: 25000,
     duration: '60分',
     photos: 25,
     features: [
@@ -165,7 +151,7 @@ export const PRICING_PLANS = [
   },
   {
     name: 'プレミアム',
-    price: 25000,
+    price: 40000,
     duration: '180分',
     photos: 50,
     features: [
