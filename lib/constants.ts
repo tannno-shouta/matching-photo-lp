@@ -1,7 +1,7 @@
 // ============================
 // サービス基本情報
 // ============================
-export const SERVICE_NAME = '福岡マッチングフォト';
+export const SERVICE_NAME = '福岡垢抜けマッチングフォト';
 export const LINE_URL = 'https://line.me/R/ti/p/@your-line-id'; // 実際のLINE IDに変更
 export const BOOKING_URL = '#contact';
 
@@ -40,9 +40,9 @@ export const PAIN_POINTS = [
 // マッチする写真の3要素
 // ============================
 export const MATCH_POINTS = [
-  { icon: '✨', text: '清潔感 — 明るい背景・整った服装・自然なヘアスタイル' },
-  { icon: '😊', text: '自然な笑顔 — 緊張せず、会話から引き出される表情' },
-  { icon: '🌿', text: '生活感のある背景 — 公園・カフェ・街並みなど親しみやすいロケ' },
+  { icon: '✨', text: '清潔感 — 整った服装・自然なヘアスタイル・垢抜けて洗練された見た目' },
+  { icon: '📸', text: '自然体 — 女性から自然にかっこいいと思ってもらえる角度やポージング' },
+  { icon: '☕', text: 'ロケーション — 好みの女性が好きなカフェ・お店で撮ることで親近感を演出' },
 ];
 
 // ============================
@@ -51,9 +51,9 @@ export const MATCH_POINTS = [
 export const REASONS = [
   {
     number: '01',
-    title: '"垢抜け"から撮影までワンストップ',
+    title: '"垢抜け"から撮影までオールインワン型',
     description:
-      '服装・髪・眉・表情。「写る素材」そのものを整えてから撮ります。他カメラマンが撮影技術しか提供しない中、当サービスは撮る前の"垢抜け"まで一気通貫でプロデュース。だから結果が違います。',
+      '服装・髪・眉・表情。「写る素材」そのものを整えてから撮ります。他カメラマンが撮影技術しか提供しない中、当サービスは撮る前の"垢抜け"までオールインワンでプロデュース。だから結果が違います。',
   },
   {
     number: '02',
@@ -318,12 +318,12 @@ type CompetitorComparisonRow = {
 };
 
 export const COMPETITOR_COMPARISON: readonly CompetitorComparisonRow[] = [
-  { criterion: '撮影技術', general: '◯', ours: '◎' },
+  { criterion: '撮影技術', general: '◎', ours: '◎' },
   { criterion: '服装アドバイス', general: '×', ours: '◯（全プラン標準）' },
   { criterion: '好み女性から逆算したロケ選定', general: '×', ours: '◎', highlight: true },
-  { criterion: '美容室・眉毛サロン紹介＋予約代行', general: '×', ours: '◯（全プラン標準）' },
+  { criterion: '美容室・眉毛サロン紹介＋予約代行', general: '×', ours: '◎（全プラン標準）' },
   { criterion: 'ファッションコンサル服装購入同行', general: '×', ours: '◎（プレミアム）' },
   { criterion: '撮影後の"垢抜け"フォロー相談', general: '×', ours: '◎（プレミアム）' },
   { criterion: 'アプリ特化構図', general: '△', ours: '◎' },
-  { criterion: 'プロフィール文添削', general: '×', ours: '◯' },
+  { criterion: 'プロフィール文添削', general: '×', ours: '◎' },
 ];

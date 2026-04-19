@@ -5,7 +5,7 @@ import { COMPETITOR_COMPARISON, REASONS } from '@/lib/constants';
 import { SectionHeading } from '../ui/SectionHeading';
 
 const ICONS: React.ReactNode[] = [
-  // SparklesIcon — 垢抜けワンストップ
+  // SparklesIcon — 垢抜けオールインワン
   <svg key="sparkles" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" />
     <circle cx="12" cy="12" r="3" />
@@ -29,7 +29,7 @@ export function Reason() {
         <SectionHeading
           eyebrow="Why Us"
           title="選ばれる3つの理由"
-          subtitle="撮るだけのカメラマンとは違う。「垢抜け」から撮影までワンストップ、しかも「好み女性から逆算」するから、結果が変わる。"
+          subtitle="撮るだけのカメラマンとは違う。「垢抜け」から撮影までオールインワン、しかも「好み女性から逆算」するから、結果が変わる。"
         />
 
         <div className="space-y-6">
@@ -101,14 +101,14 @@ export function Reason() {
           <div className="hidden sm:block overflow-hidden rounded-2xl border border-[#E5E7EB] shadow-sm">
             <table className="w-full text-left">
               <caption className="sr-only">
-                一般的な撮影サービスと福岡マッチングフォトのサービス内容比較表
+                一般的な撮影サービスと福岡垢抜けマッチングフォトのサービス内容比較表
               </caption>
               <thead className="bg-[#1A2744] text-white">
                 <tr>
                   <th scope="col" className="py-4 px-6 text-sm font-bold">項目</th>
                   <th scope="col" className="py-4 px-6 text-sm font-bold text-center">一般的な撮影サービス</th>
                   <th scope="col" className="py-4 px-6 text-sm font-bold text-center text-[#C9A96E]">
-                    福岡マッチングフォト
+                    福岡垢抜けマッチングフォト
                   </th>
                 </tr>
               </thead>

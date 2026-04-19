@@ -25,7 +25,7 @@ export function TestimonialCard({
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="relative bg-white rounded-2xl p-6 shadow-md border border-[#E5E7EB] min-w-[300px] max-w-[360px] flex-shrink-0 overflow-hidden hover:border-[#C9A96E]/40 hover:shadow-lg transition-all duration-300"
+      className="relative bg-white rounded-2xl p-6 shadow-md border border-[#E5E7EB] min-w-[300px] max-w-[360px] flex-shrink-0 lg:min-w-0 lg:max-w-none lg:flex-shrink lg:w-full overflow-hidden hover:border-[#C9A96E]/40 hover:shadow-lg transition-all duration-300"
     >
       {/* 装飾クォート */}
       <div

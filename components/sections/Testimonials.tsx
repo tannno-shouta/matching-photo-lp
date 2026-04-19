@@ -56,12 +56,12 @@ export function Testimonials() {
           ))}
         </div>
 
-        {/* カルーセル + 矢印ボタン */}
+        {/* カルーセル + 矢印ボタン（lg未満） / グリッド（lg以上） */}
         <div className="relative">
-          {/* 左矢印 */}
+          {/* 左矢印（md のみ。lg 以上は grid なので非表示） */}
           <button
             onClick={() => scroll('left')}
-            className="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/10 border border-white/20 rounded-full shadow-md items-center justify-center text-white/70 hover:border-[#C9A96E]/60 hover:text-[#C9A96E] transition-colors duration-200"
+            className="hidden md:flex lg:hidden absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/10 border border-white/20 rounded-full shadow-md items-center justify-center text-white/70 hover:border-[#C9A96E]/60 hover:text-[#C9A96E] transition-colors duration-200"
             aria-label="前へ"
           >
             <svg aria-hidden="true" focusable="false" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -69,10 +69,10 @@ export function Testimonials() {
             </svg>
           </button>
 
-          {/* 右矢印 */}
+          {/* 右矢印（md のみ。lg 以上は grid なので非表示） */}
           <button
             onClick={() => scroll('right')}
-            className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/10 border border-white/20 rounded-full shadow-md items-center justify-center text-white/70 hover:border-[#C9A96E]/60 hover:text-[#C9A96E] transition-colors duration-200"
+            className="hidden md:flex lg:hidden absolute -right-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/10 border border-white/20 rounded-full shadow-md items-center justify-center text-white/70 hover:border-[#C9A96E]/60 hover:text-[#C9A96E] transition-colors duration-200"
             aria-label="次へ"
           >
             <svg aria-hidden="true" focusable="false" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -80,8 +80,8 @@ export function Testimonials() {
             </svg>
           </button>
 
-          <div ref={scrollRef} className="overflow-x-auto pb-4 scrollbar-hide">
-            <div className="flex gap-4 w-max">
+          <div ref={scrollRef} className="overflow-x-auto lg:overflow-visible pb-4 scrollbar-hide">
+            <div className="flex gap-4 w-max lg:grid lg:grid-cols-2 lg:gap-6 lg:w-full">
               {TESTIMONIALS.map((t, i) => (
                 <TestimonialCard key={i} {...t} index={i} />
               ))}
@@ -89,7 +89,7 @@ export function Testimonials() {
           </div>
         </div>
 
-        <p className="text-center text-white/40 text-xs mt-3">← 横にスクロールできます →</p>
+        <p className="text-center text-white/40 text-xs mt-3 lg:hidden">← 横にスクロールできます →</p>
       </div>
     </section>
   );

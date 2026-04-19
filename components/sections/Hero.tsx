@@ -103,7 +103,7 @@ export function Hero() {
           variants={itemVariants}
           className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-4 leading-relaxed"
         >
-          撮るだけじゃない。服装・髪・表情を整え、<strong className="text-white">好み女性に刺さるロケ</strong>で撮る&quot;ワンストップ型&quot;。
+          撮るだけじゃない。服装・髪・表情を整え、<strong className="text-white">好み女性に刺さるロケ</strong>で撮る&quot;オールインワン型&quot;。
         </motion.p>
         <motion.p
           variants={itemVariants}
