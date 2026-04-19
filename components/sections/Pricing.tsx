@@ -12,7 +12,7 @@ export function Pricing() {
         <SectionHeading
           eyebrow="Pricing"
           title="料金プラン"
-          subtitle="初めての方は「スタンダード」が断然おすすめ。60分・25枚・アプリ攻略相談つきで25,000円。今月残り3枠です。"
+          subtitle="初めての方は「スタンダード」が断然おすすめ。60分・10枚・アプリ攻略相談つきで25,000円。今月残り3枠です。"
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-start">

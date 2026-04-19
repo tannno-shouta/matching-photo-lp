@@ -85,7 +85,7 @@ export function PricingCard({
           <span className={`text-sm mb-1 ${isRecommended ? 'text-white/60' : 'text-[#6B7280]'}`}>/回</span>
         </div>
         <div className={`flex gap-4 text-xs ${isRecommended ? 'text-white/60' : 'text-[#6B7280]'}`}>
-          <span>撮影時間 {duration}</span>
+          <span>所要時間 {duration}</span>
           <span>納品 {photos}枚</span>
         </div>
       </div>
