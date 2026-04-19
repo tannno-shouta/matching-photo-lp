@@ -41,7 +41,7 @@ export const PAIN_POINTS = [
 export const MATCH_POINTS = [
   { icon: '✨', text: '清潔感 — 整った服装・自然なヘアスタイル・垢抜けて洗練された見た目' },
   { icon: '📸', text: '自然体 — 女性から自然にかっこいいと思ってもらえる角度やポージング' },
-  { icon: '☕', text: 'ロケーション — 好みの女性が好きなカフェ・お店で撮ることで親近感を演出' },
+  { icon: '☕', text: 'ロケーション — 女性が好きなお店・スポットで撮ることで親近感を演出' },
 ];
 
 // ============================
@@ -58,7 +58,7 @@ export const REASONS = [
     number: '02',
     title: 'あなたの"好み女性"から逆算したロケ選定',
     description:
-      '好みの女性のタイプを事前ヒアリング。そのタイプに刺さる場所・お店を撮影地に選びます。大濠・天神・警固・ウォーターフロントを熟知した、"好みの女性に届く写真"の戦略設計。',
+      '好みの女性のタイプを事前ヒアリング。そのタイプに刺さるカフェ・セレクトショップ・ホテルラウンジ・天神大名の街並みを撮影地に選びます。"好みの女性に届く写真"の戦略設計。',
   },
   {
     number: '03',
@@ -73,28 +73,28 @@ export const REASONS = [
 // ============================
 export const LOCATIONS = [
   {
-    name: '大濠公園',
-    description: '池と緑が美しい開放感ある公園。散歩感・アクティブな印象を演出。',
-    mood: '爽やか・自然体',
-    image: '/images/locations/ohori.jpg',
+    name: 'カフェ',
+    description: '"一緒にお茶したい"を直感させる、こなれた日常感。自然光と会話で、力の抜けた表情を引き出します。',
+    mood: '爽やか・親近感',
+    image: '/images/portfolio/p3.jpg',
   },
   {
-    name: '天神・大名エリア',
-    description: 'おしゃれなカフェや路地裏で、都会的で洗練された雰囲気に。',
+    name: 'ホテルラウンジ',
+    description: '品と余裕が伝わる、落ち着いた大人の空気感。Omiai・with層に刺さる「丁寧に生きてる男性」像を演出。',
+    mood: '品・余裕',
+    image: '/images/portfolio/p1.jpg',
+  },
+  {
+    name: 'セレクトショップ',
+    description: 'おしゃれな空間で"センスある人"の文脈を付与。ファッションコンサル同行プランなら、服選び→撮影まで一連で。',
     mood: '都会的・洗練',
+    image: '/images/portfolio/p6.jpg',
+  },
+  {
+    name: '天神・大名の街並み',
+    description: '都会的な街中スナップで、映画のワンシーンのような余白ある一枚を。カジュアルすぎず、キメすぎない絶妙な温度感。',
+    mood: '都会スナップ',
     image: '/images/locations/tenjin.jpg',
-  },
-  {
-    name: '警固公園',
-    description: '天神中心部にある憩いの場。明るく開放的な写真が撮れます。',
-    mood: '明るい・親しみやすい',
-    image: '/images/locations/kego.jpg',
-  },
-  {
-    name: 'ウォーターフロント',
-    description: '港・海をバックに、スケール感のある印象的な一枚を。',
-    mood: '開放的・スケール感',
-    image: '/images/locations/waterfront.jpg',
   },
 ];
 
@@ -285,7 +285,7 @@ export const TESTIMONIALS: readonly Testimonial[] = [
       '福岡の景色を背景にしてもらったら、地元感が出て話しかけやすいと好評でした。撮影自体も楽しかったです！',
     rating: 5,
     photographerNote:
-      'Tinderは親近感が命。ウォーターフロントの自然光+カジュアル設定で、「会ってみたい近い人」と感じてもらえる質感を狙いました。',
+      'Tinderは親近感が命。カフェの自然光+カジュアル設定で、「会ってみたい近い人」と感じてもらえる質感を狙いました。',
   },
   {
     name: 'Y.F さん（40歳・経営者）',
@@ -312,7 +312,7 @@ export const FAQS = [
   {
     question: '当日の服装はどうすればいいですか？',
     answer:
-      '清潔感のある服装がおすすめです。明るい色のトップス（白・ライトブルー・ベージュなど）が写真映えします。全プラン共通で事前の服装相談（手持ち選定・NG指摘）が標準装備。プレミアムではファッションコンサルによる服装購入同行も承ります。',
+      '清潔感のある服装がおすすめです。服装がわからなくても、全プラン共通で事前の服装相談（手持ち選定・NG指摘）が標準装備。プレミアムではファッションコンサルによる服装購入同行も承ります。',
   },
   {
     question: 'スタンダードでも"垢抜け"サポートは受けられますか？',
@@ -370,11 +370,11 @@ export const FAQS = [
 // ポートフォリオ（サンプル）
 // ============================
 export const PORTFOLIO_IMAGES = [
-  { src: '/images/portfolio/p1.jpg', alt: '大濠公園での撮影例', aspect: 'tall' },
-  { src: '/images/portfolio/p2.jpg', alt: '天神エリアでの撮影例', aspect: 'wide' },
+  { src: '/images/portfolio/p1.jpg', alt: 'カフェでの撮影例', aspect: 'tall' },
+  { src: '/images/portfolio/p2.jpg', alt: '天神大名の街並みでの撮影例', aspect: 'wide' },
   { src: '/images/portfolio/p3.jpg', alt: 'カフェでの撮影例', aspect: 'square' },
-  { src: '/images/portfolio/p4.jpg', alt: '公園での撮影例', aspect: 'tall' },
-  { src: '/images/portfolio/p5.jpg', alt: 'ウォーターフロントでの撮影例', aspect: 'wide' },
+  { src: '/images/portfolio/p4.jpg', alt: 'ホテルラウンジでの撮影例', aspect: 'tall' },
+  { src: '/images/portfolio/p5.jpg', alt: 'セレクトショップでの撮影例', aspect: 'wide' },
   { src: '/images/portfolio/p6.jpg', alt: '街並みでの撮影例', aspect: 'square' },
 ];
 
@@ -414,11 +414,9 @@ export const PHOTO_MATTERS_POINTS = [
 // 写真が9割 — チェックリスト
 // ============================
 export const PHOTO_CHECKLIST = [
-  '自然光で撮っている',
-  '背景は生活感のある屋外',
-  '笑顔が"作り笑い"になっていない',
   '服・髪・眉が整っている（＝垢抜け）',
-  '1〜2枚で勝負する設計になっている',
+  '好みの女性に親近感を持って貰えるロケーション',
+  '笑顔が"作り笑い"になっていない',
 ];
 
 // ============================

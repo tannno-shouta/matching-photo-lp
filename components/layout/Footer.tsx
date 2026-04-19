@@ -10,7 +10,7 @@ export function Footer() {
         <p className="text-xs tracking-wider text-[#C9A96E]/90">
           福岡で、垢抜けて最高の1枚へ。
         </p>
-        <p className="text-sm">福岡市内 / 大濠公園・天神・警固公園エリア</p>
+        <p className="text-sm">福岡市内 / 天神・大名・薬院エリア中心</p>
         <div className="flex justify-center gap-6 text-sm">
           <a href={LINE_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
             LINEで相談

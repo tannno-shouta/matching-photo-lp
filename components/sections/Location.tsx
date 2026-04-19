@@ -11,7 +11,7 @@ export function Location() {
       <div className="max-w-5xl mx-auto">
         <SectionHeading
           eyebrow="Location"
-          title="好み女性から逆算した撮影スポット"
+          title="好みの女性に親近感が湧くロケーション"
           subtitle="あなたの「好みの女性のタイプ」を事前ヒアリング。そのタイプの女性に刺さる場所・お店を撮影地に選ぶから、好みの女性に届く写真が撮れる。"
         />
 
