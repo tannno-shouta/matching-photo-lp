@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const siteMetadata: Metadata = {
   title: '福岡で"垢抜け"プロフィール写真【男性専用】｜いいね数2.4倍の実績',
   description:
-    '写真が9割。福岡で"垢抜け"→撮影までオールインワン型。服装・ヘア・眉まで整え、好み女性から逆算したロケで撮影。Pairs/with/Tinderで「いいね数平均2.4倍」「マッチ率63%向上」の実績を持つ男性専用サービス。500名実績・無料相談。',
+    '写真が9割。福岡で"垢抜け"→撮影までオールインワン型。服装・ヘア・眉まで整え、好み女性から逆算したロケで撮影。Pairs/with/Tinderで「いいね数平均2.4倍」「マッチ率63%向上」の実績を持つ男性専用サービス。無料相談受付中。',
   keywords: [
     '福岡 マッチングアプリ 写真',
     '垢抜け 男性 福岡',
@@ -25,7 +25,7 @@ export const siteMetadata: Metadata = {
   openGraph: {
     title: '福岡で"垢抜け"プロフィール写真【男性専用】｜いいね数2.4倍の実績',
     description:
-      '写真が9割。福岡で"垢抜け"→撮影までオールインワン型。好み女性から逆算したロケで撮影し、Pairs/with/Tinderで「いいね数平均2.4倍」「マッチ率63%向上」の実績。500名実績・無料相談。',
+      '写真が9割。福岡で"垢抜け"→撮影までオールインワン型。好み女性から逆算したロケで撮影し、Pairs/with/Tinderで「いいね数平均2.4倍」「マッチ率63%向上」の実績。無料相談受付中。',
     url: 'https://your-domain.com',
     siteName: '福岡垢抜けマッチングフォト',
     images: [
@@ -75,10 +75,4 @@ export const structuredData = {
   areaServed: '福岡市',
   priceRange: '¥25,000〜¥40,000',
   openingHours: 'Mo-Su 09:00-21:00',
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.9',
-    reviewCount: '127',
-    bestRating: '5',
-  },
 };

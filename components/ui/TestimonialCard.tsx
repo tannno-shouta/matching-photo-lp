@@ -1,14 +1,9 @@
-import { motion } from 'framer-motion';
+'use client';
 
-interface TestimonialCardProps {
-  name: string;
-  app: string;
-  before: string;
-  after: string;
-  comment: string;
-  rating: number;
-  index: number;
-}
+import { motion, useReducedMotion } from 'framer-motion';
+import type { Testimonial } from '@/lib/constants';
+
+type TestimonialCardProps = Testimonial & { index: number };
 
 export function TestimonialCard({
   name,
@@ -18,11 +13,14 @@ export function TestimonialCard({
   comment,
   rating,
   index,
+  photographerNote,
 }: TestimonialCardProps) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <motion.div
-      initial={{ opacity: 0, x: 32 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={shouldReduceMotion ? false : { opacity: 0, x: 32 }}
+      whileInView={shouldReduceMotion ? undefined : { opacity: 1, x: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="relative bg-white rounded-2xl p-6 shadow-md border border-[#E5E7EB] min-w-[300px] max-w-[360px] flex-shrink-0 lg:min-w-0 lg:max-w-none lg:flex-shrink lg:w-full overflow-hidden hover:border-[#C9A96E]/40 hover:shadow-lg transition-all duration-300"
@@ -53,6 +51,15 @@ export function TestimonialCard({
       <p className="relative text-[#1A1A1A] text-sm leading-relaxed mb-5 z-10">
         &ldquo;{comment}&rdquo;
       </p>
+
+      {photographerNote && (
+        <div className="relative bg-[#1A2744]/[0.04] border-l-4 border-[#C9A96E] rounded-r-lg px-4 py-3 mb-5 z-10">
+          <p className="text-[10px] font-bold text-[#C9A96E] tracking-widest uppercase mb-1.5">
+            担当者メモ
+          </p>
+          <p className="text-xs text-[#1A2744] leading-relaxed">{photographerNote}</p>
+        </div>
+      )}
 
       <div className="border-t border-[#E5E7EB] pt-4">
         <div className="flex justify-between items-start">

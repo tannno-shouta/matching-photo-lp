@@ -9,7 +9,7 @@ import { LINE_URL, SERVICE_NAME } from '@/lib/constants';
 const NAV_ITEMS = [
   { label: '写真が9割', href: '#why-photos' },
   { label: '選ばれる理由', href: '#reason' },
-  { label: 'ポートフォリオ', href: '#portfolio' },
+  { label: '撮影メンバー', href: '#photographer' },
   { label: '料金', href: '#pricing' },
   { label: 'よくある質問', href: '#faq' },
 ];
@@ -67,7 +67,9 @@ export function Header() {
         <button
           className={`md:hidden p-2 ${isScrolled ? 'text-[#1A2744]' : 'text-white'}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="メニュー"
+          aria-label={isMenuOpen ? 'メニューを閉じる' : 'メニューを開く'}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-nav"
         >
           <svg aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
             {isMenuOpen ? (
@@ -81,10 +83,13 @@ export function Header() {
 
       {/* モバイルメニュー */}
       <motion.div
+        id="mobile-nav"
         initial={false}
         animate={{ height: isMenuOpen ? 'auto' : 0, opacity: isMenuOpen ? 1 : 0 }}
         transition={{ duration: 0.25 }}
         className="md:hidden overflow-hidden bg-white border-t border-[#E5E7EB]"
+        aria-hidden={!isMenuOpen}
+        inert={!isMenuOpen}
       >
         <nav className="px-4 py-4 flex flex-col gap-3">
           {NAV_ITEMS.map((item) => (

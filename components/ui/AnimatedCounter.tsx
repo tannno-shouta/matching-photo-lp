@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { useInView } from 'framer-motion';
+import { useInView, useReducedMotion } from 'framer-motion';
 
 interface AnimatedCounterProps {
   value: number;
@@ -16,12 +16,18 @@ export function AnimatedCounter({
   duration = 2000,
   decimals = 0,
 }: AnimatedCounterProps) {
-  const [count, setCount] = useState(0);
+  const shouldReduceMotion = useReducedMotion();
+  const [count, setCount] = useState(shouldReduceMotion ? value : 0);
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
   const hasStarted = useRef(false);
 
   useEffect(() => {
+    if (shouldReduceMotion) {
+      setCount(value);
+      hasStarted.current = true;
+      return;
+    }
     if (!isInView || hasStarted.current) return;
     hasStarted.current = true;
 
@@ -32,7 +38,6 @@ export function AnimatedCounter({
     const update = (currentTime: number) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // easeOutExpo
       const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
       const current = start + (end - start) * eased;
       setCount(parseFloat(current.toFixed(decimals)));
@@ -43,7 +48,7 @@ export function AnimatedCounter({
     };
 
     requestAnimationFrame(update);
-  }, [isInView, value, duration, decimals]);
+  }, [isInView, value, duration, decimals, shouldReduceMotion]);
 
   return (
     <span ref={ref}>

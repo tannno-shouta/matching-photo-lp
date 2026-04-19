@@ -67,8 +67,8 @@ export function BottomCTA() {
           </h2>
 
           <p className="text-white/80 text-lg mb-4 leading-relaxed">
-            500名以上の男性が、写真1枚で出会いの入口を変えてきました。<br />
-            あなたも、<strong className="text-white">今月中に動けば</strong>来月のいいね数が変わります。
+            撮るだけでは、変わらない。<br />
+            <strong className="text-white">&quot;撮る前の垢抜け&quot;から整える</strong>から、写真1枚で出会いの入口が変わる。
           </p>
 
           <p className="text-white/40 text-sm mb-10 tracking-wide">

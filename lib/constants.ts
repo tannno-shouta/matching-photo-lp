@@ -9,7 +9,6 @@ export const BOOKING_URL = '#contact';
 // 統計データ
 // ============================
 export const STATS = [
-  { value: 500, suffix: '名+', label: '累計撮影実績（男性）' },
   { value: 2.4, suffix: '倍', label: 'いいね数平均増加' },
   { value: 63, suffix: '%', label: 'マッチ率向上' },
   { value: 98, suffix: '%', label: '顧客満足度' },
@@ -165,9 +164,96 @@ export const PRICING_PLANS = [
 ];
 
 // ============================
+// 撮影メンバー（カメラマン）
+// ============================
+export interface Photographer {
+  name: string;
+  role: string;
+  badge: string;
+  imageSrc: string | null;
+  careers: readonly string[];
+  strengths: string;
+  message: string | null;
+  social: { label: string; href: string } | null;
+}
+
+export const PHOTOGRAPHERS: readonly Photographer[] = [
+  {
+    name: 'shota',
+    role: '代表 / 垢抜けディレクター',
+    badge: '代表',
+    imageSrc: null,
+    careers: [
+      '美容師 8年',
+      'ファッションコンサル 3年',
+      'フロントエンドエンジニア 4年',
+      'ITコンサル 1年目',
+    ],
+    strengths:
+      '美容師8年で培った「似合わせ」と、ファッションコンサル3年で磨いた「服装戦略」を、そのまま撮影前の"垢抜け"設計に落とし込みます。「撮るだけ」のカメラマンには真似できない、トータルプロデュースが本業。',
+    message:
+      '写真は結果。その手前の「垢抜け」まで含めてプロデュースするのが、僕らのスタンスです。',
+    social: null,
+  },
+  {
+    name: 'ハマ',
+    role: '専属カメラマン',
+    badge: 'カメラマン',
+    imageSrc: null,
+    careers: ['カメラマン歴 2年', '福岡のロケーション熟知', '自然な表情・ポージング指導'],
+    strengths:
+      '被写体の緊張をほぐしながら、会話の中で自然な表情を引き出すのが得意。福岡の撮影スポットに精通し、あなたの魅力を一番引き出す角度を見つけます。',
+    message: null,
+    social: { label: 'X (Twitter)', href: 'https://x.com/azuEyqOcSW77628' },
+  },
+];
+
+// ============================
+// 安心ポイント
+// ============================
+export interface SafetyPoint {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export const SAFETY_POINTS: readonly SafetyPoint[] = [
+  {
+    icon: '💬',
+    title: 'LINE 24時間以内返信',
+    description: 'お問合せには24h以内に必ずご返信。迷っている段階でもお気軽に。',
+  },
+  {
+    icon: '📝',
+    title: '撮影前カウンセリング標準',
+    description: '全プラン共通で事前ヒアリング。当日いきなり撮影ではなく、不安を全部解消してから臨みます。',
+  },
+  {
+    icon: '📅',
+    title: '前日までキャンセル無料',
+    description: '前日までのご連絡であれば無料でキャンセル可能。無理なくご予約いただけます。',
+  },
+  {
+    icon: '🔒',
+    title: 'プライバシー厳守',
+    description: 'お客様のお写真は許可なく二次使用しません。広告掲載は必ず当日に許可確認を取ります。',
+  },
+];
+
+// ============================
 // お客様の声
 // ============================
-export const TESTIMONIALS = [
+export interface Testimonial {
+  name: string;
+  app: string;
+  before: string;
+  after: string;
+  comment: string;
+  rating: number;
+  photographerNote?: string;
+}
+
+export const TESTIMONIALS: readonly Testimonial[] = [
   {
     name: 'T.K さん（28歳・エンジニア）',
     app: 'Pairs使用',
@@ -176,6 +262,8 @@ export const TESTIMONIALS = [
     comment:
       '撮影前はカメラが苦手で緊張していましたが、会話しながら撮ってもらったので自然な笑顔が引き出せました。撮影後、いいね数が明らかに増えてびっくりしました！',
     rating: 5,
+    photographerNote:
+      '表情が硬くなりがちなタイプだったので、カフェでコーヒーを挟んで肩の力を抜く導線に。平行眉×ライトブルーシャツで清潔感を底上げしました。',
   },
   {
     name: 'S.M さん（33歳・営業職）',
@@ -185,6 +273,8 @@ export const TESTIMONIALS = [
     comment:
       '自分ではどう撮ればいいかわからなかったのですが、プロに任せたら全然違う仕上がりに。写真の力ってすごいですね。マッチしてから付き合いました笑',
     rating: 5,
+    photographerNote:
+      '営業職で印象は整っていたので、「優しさが伝わる柔らかさ」を追加。前髪の流し方と首元のゆとりで、仕事顔からオフ顔へ切り替えました。',
   },
   {
     name: 'R.O さん（25歳・会社員）',
@@ -194,6 +284,8 @@ export const TESTIMONIALS = [
     comment:
       '福岡の景色を背景にしてもらったら、地元感が出て話しかけやすいと好評でした。撮影自体も楽しかったです！',
     rating: 5,
+    photographerNote:
+      'Tinderは親近感が命。ウォーターフロントの自然光+カジュアル設定で、「会ってみたい近い人」と感じてもらえる質感を狙いました。',
   },
   {
     name: 'Y.F さん（40歳・経営者）',
@@ -203,6 +295,8 @@ export const TESTIMONIALS = [
     comment:
       '年齢的に写真の重要性は理解していたけど、一人では限界があって。プロに頼んで正解でした。今はいい人とお付き合いしています。',
     rating: 5,
+    photographerNote:
+      '40代は「品」と「余裕」の両立が鍵。ジャケット×白シャツの正解コーデと、目尻に入る微笑でOmiai層が求める大人の雰囲気を設計しました。',
   },
 ];
 
@@ -249,6 +343,26 @@ export const FAQS = [
     question: 'どのくらい効果がありますか？',
     answer:
       '個人差はありますが、お客様アンケートでは平均していいね数2.4倍、マッチ率63%向上という実績があります。写真だけでなく、アプリの設定・プロフィール文のアドバイスもすることで相乗効果が出ます。',
+  },
+  {
+    question: '撮った写真が他人の目に触れることはありませんか？',
+    answer:
+      'お客様のお写真は、許可なくWebサイトやSNS・広告などに二次使用することはありません。制作実績として掲載させていただきたい場合は、必ず撮影当日にご本人にご確認のうえ、許諾いただいた範囲でのみ使用いたします。',
+  },
+  {
+    question: 'キャンセル・日程変更はできますか？',
+    answer:
+      '前日までのご連絡であれば無料でキャンセル・日程変更を承ります。当日キャンセルの場合はキャンセル料として料金の100%を頂戴しますので、ご予定はお早めにご確認ください。天候による日程変更はキャンセル料は発生しません。',
+  },
+  {
+    question: '支払い方法は何がありますか？',
+    answer:
+      '現金・銀行振込・各種キャッシュレス決済（PayPay・クレジットカード等）に対応しています。撮影当日までにお支払いいただく形になります。詳細はLINEでお気軽にご相談ください。',
+  },
+  {
+    question: '写真はLINEで見せるのが恥ずかしいです。',
+    answer:
+      '大丈夫です♪ マッチングアプリ用の写真を撮る方のほとんどが同じ気持ちでスタートしています。担当カメラマンは全員、撮影〜相談まで秘密厳守。「初めてでも安心して相談できた」という声を多くいただいています。',
   },
 ];
 

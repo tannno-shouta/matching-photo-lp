@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, type Variants } from 'framer-motion';
+import { motion, useReducedMotion, type Variants } from 'framer-motion';
 import { Button } from '../ui/Button';
 import { AnimatedCounter } from '../ui/AnimatedCounter';
 import { LINE_URL, STATS } from '@/lib/constants';
@@ -16,6 +16,8 @@ const itemVariants: Variants = {
 };
 
 export function Hero() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* 背景グラデーション（パレット統一版） */}
@@ -39,12 +41,12 @@ export function Hero() {
       <div className="absolute -top-20 -right-20 w-[320px] h-[320px] rounded-full border border-[#C9A96E]/15 pointer-events-none" />
 
       {/* 幾何学的装飾 — 左下のライン */}
-      <div className="absolute bottom-24 left-8 w-px h-32 bg-gradient-to-b from-transparent via-[#C9A96E]/40 to-transparent pointer-events-none hidden lg:block" />
-      <div className="absolute bottom-24 left-14 w-px h-20 bg-gradient-to-b from-transparent via-[#C9A96E]/25 to-transparent pointer-events-none hidden lg:block" />
+      <div className="absolute bottom-24 left-8 w-px h-32 bg-gradient-to-b from-transparent via-[#C9A96E]/25 to-transparent pointer-events-none hidden lg:block" />
+      <div className="absolute bottom-24 left-14 w-px h-20 bg-gradient-to-b from-transparent via-[#C9A96E]/15 to-transparent pointer-events-none hidden lg:block" />
 
       {/* diagonal ライン装飾 */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-40"
+        className="absolute inset-0 pointer-events-none opacity-25"
         style={{
           backgroundImage: 'repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(201,169,110,0.03) 40px, rgba(201,169,110,0.03) 41px)',
         }}
@@ -54,13 +56,16 @@ export function Hero() {
       <motion.div
         className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center text-white pt-20 pb-16"
         variants={containerVariants}
-        initial="hidden"
+        initial={shouldReduceMotion ? 'visible' : 'hidden'}
         animate="visible"
       >
         {/* バッジ */}
         <motion.div variants={itemVariants} className="mb-6">
           <span className="inline-flex items-center gap-2 bg-[#C9A96E]/15 border border-[#C9A96E]/50 text-[#C9A96E] text-sm font-bold px-5 py-2.5 rounded-full tracking-widest uppercase">
-            <span className="w-1.5 h-1.5 bg-[#C9A96E] rounded-full animate-pulse inline-block" aria-hidden="true" />
+            <span
+              className={`w-1.5 h-1.5 bg-[#C9A96E] rounded-full inline-block ${shouldReduceMotion ? '' : 'animate-pulse'}`}
+              aria-hidden="true"
+            />
             福岡の男性向け &quot;垢抜け&quot;プロフ撮影
           </span>
         </motion.div>
@@ -109,7 +114,7 @@ export function Hero() {
           variants={itemVariants}
           className="text-base text-white/50 mb-10 tracking-wide"
         >
-          <strong className="text-white/70">福岡500名の男性</strong>が、写真1枚で出会いを変えた。
+          福岡で、<strong className="text-white/70">&quot;撮る前の垢抜け&quot;</strong>までやるから、写真1枚で出会いが変わる。
         </motion.p>
 
         {/* CTA */}
@@ -130,7 +135,7 @@ export function Hero() {
         {/* 実績バッジ */}
         <motion.div
           variants={itemVariants}
-          className="grid grid-cols-2 sm:grid-cols-4 gap-3"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto"
         >
           {STATS.map((stat) => (
             <div
@@ -158,8 +163,8 @@ export function Hero() {
       {/* スクロールインジケーター */}
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity }}
+        animate={shouldReduceMotion ? undefined : { y: [0, 8, 0] }}
+        transition={shouldReduceMotion ? undefined : { duration: 1.5, repeat: Infinity }}
       >
         <div className="w-6 h-10 border border-white/30 rounded-full flex items-start justify-center pt-2">
           <div className="w-1.5 h-3 bg-[#C9A96E]/70 rounded-full" />

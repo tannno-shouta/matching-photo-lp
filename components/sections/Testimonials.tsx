@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useRef } from 'react';
 import { STATS, TESTIMONIALS } from '@/lib/constants';
 import { SectionHeading } from '../ui/SectionHeading';
@@ -9,6 +9,7 @@ import { AnimatedCounter } from '../ui/AnimatedCounter';
 
 export function Testimonials() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const shouldReduceMotion = useReducedMotion();
 
   const scroll = (dir: 'left' | 'right') => {
     if (!scrollRef.current) return;
@@ -34,12 +35,12 @@ export function Testimonials() {
         />
 
         {/* カウンター */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-14 max-w-3xl mx-auto">
           {STATS.map((stat, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+              whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="bg-white/8 rounded-2xl p-5 text-center border border-white/10 hover:border-[#C9A96E]/40 hover:shadow-md transition-all duration-300"
@@ -90,6 +91,10 @@ export function Testimonials() {
         </div>
 
         <p className="text-center text-white/40 text-xs mt-3 lg:hidden">← 横にスクロールできます →</p>
+
+        <p className="text-center text-white/40 text-[11px] mt-8 leading-relaxed">
+          ※ 掲載内容は個人の感想であり、効果や成果を保証するものではありません。
+        </p>
       </div>
     </section>
   );
