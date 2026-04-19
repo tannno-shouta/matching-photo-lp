@@ -11,8 +11,8 @@ export function Location() {
       <div className="max-w-5xl mx-auto">
         <SectionHeading
           eyebrow="Location"
-          title="福岡の人気撮影スポット"
-          subtitle="福岡の地に精通したカメラマンが、あなたのイメージに合ったベストな場所を提案します。"
+          title="好み女性から逆算した撮影スポット"
+          subtitle="あなたの「好みの女性のタイプ」を事前ヒアリング。そのタイプの女性に刺さる場所・お店を撮影地に選ぶから、好みの女性に届く写真が撮れる。"
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -54,7 +54,7 @@ export function Location() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center text-[#6B7280] text-sm mt-8"
         >
-          上記以外のスポットもご相談ください。あなたの希望に合わせて最適な場所をご提案します。
+          上記以外のスポットもご相談ください。あなたの「好み女性像」に合わせた最適な場所を一緒に設計します。
         </motion.p>
       </div>
     </section>

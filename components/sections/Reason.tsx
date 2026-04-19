@@ -1,22 +1,24 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { REASONS } from '@/lib/constants';
+import { COMPETITOR_COMPARISON, REASONS } from '@/lib/constants';
 import { SectionHeading } from '../ui/SectionHeading';
 
 const ICONS: React.ReactNode[] = [
-  // ChatIcon — 会話型撮影
-  <svg key="chat" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+  // SparklesIcon — 垢抜けワンストップ
+  <svg key="sparkles" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" />
+    <circle cx="12" cy="12" r="3" />
+  </svg>,
+  // TargetIcon — 好み女性から逆算
+  <svg key="target" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10" />
+    <circle cx="12" cy="12" r="6" />
+    <circle cx="12" cy="12" r="2" />
+  </svg>,
+  // ChatIcon — 会話型撮影 × アプリ特化
+  <svg key="chat" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-  </svg>,
-  // PinIcon — 福岡の撮影スポット
-  <svg key="pin" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-    <circle cx="12" cy="10" r="3" />
-  </svg>,
-  // DiamondIcon — マッチングアプリ特化
-  <svg key="diamond" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41l-7.59-7.59a2.41 2.41 0 0 0-3.41 0Z" />
   </svg>,
 ];
 
@@ -27,7 +29,7 @@ export function Reason() {
         <SectionHeading
           eyebrow="Why Us"
           title="選ばれる3つの理由"
-          subtitle="「2週間で5人とデート」「付き合いました」── 500名の実績が証明する3つのこだわり。"
+          subtitle="撮るだけのカメラマンとは違う。「垢抜け」から撮影までワンストップ、しかも「好み女性から逆算」するから、結果が変わる。"
         />
 
         <div className="space-y-6">
@@ -76,6 +78,90 @@ export function Reason() {
             </motion.div>
           ))}
         </div>
+
+        {/* 他カメラマンとの違い 対比表 */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+          className="mt-16"
+        >
+          <h3
+            className="text-2xl font-bold text-[#1A2744] mb-2 text-center"
+            style={{ fontFamily: 'var(--font-heading)' }}
+          >
+            他カメラマンとの違い
+          </h3>
+          <p className="text-[#6B7280] text-sm text-center mb-8">
+            撮影技術の先まで、当サービスにしかない価値を。
+          </p>
+
+          {/* デスクトップ：テーブル型 */}
+          <div className="hidden sm:block overflow-hidden rounded-2xl border border-[#E5E7EB] shadow-sm">
+            <table className="w-full text-left">
+              <caption className="sr-only">
+                一般的な撮影サービスと福岡マッチングフォトのサービス内容比較表
+              </caption>
+              <thead className="bg-[#1A2744] text-white">
+                <tr>
+                  <th scope="col" className="py-4 px-6 text-sm font-bold">項目</th>
+                  <th scope="col" className="py-4 px-6 text-sm font-bold text-center">一般的な撮影サービス</th>
+                  <th scope="col" className="py-4 px-6 text-sm font-bold text-center text-[#C9A96E]">
+                    福岡マッチングフォト
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="bg-white">
+                {COMPETITOR_COMPARISON.map((row, i) => (
+                  <tr
+                    key={i}
+                    className={`border-t border-[#E5E7EB] ${row.highlight ? 'bg-[#C9A96E]/8' : ''}`}
+                  >
+                    <th
+                      scope="row"
+                      className={`py-3 px-6 text-sm font-normal ${row.highlight ? 'font-bold text-[#1A2744]' : 'text-[#1A2744]'}`}
+                    >
+                      {row.criterion}
+                    </th>
+                    <td className="py-3 px-6 text-center text-[#6B7280] text-sm">{row.general}</td>
+                    <td className="py-3 px-6 text-center text-[#1A2744] font-bold text-sm">
+                      {row.ours}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* モバイル：カード型 */}
+          <div className="sm:hidden space-y-3">
+            {COMPETITOR_COMPARISON.map((row, i) => (
+              <div
+                key={i}
+                className={`rounded-xl border p-4 ${
+                  row.highlight ? 'border-[#C9A96E] bg-[#C9A96E]/8' : 'border-[#E5E7EB] bg-white'
+                }`}
+              >
+                <p
+                  className={`text-sm mb-2 ${row.highlight ? 'font-bold text-[#1A2744]' : 'font-semibold text-[#1A2744]'}`}
+                >
+                  {row.criterion}
+                </p>
+                <div className="grid grid-cols-2 gap-3 text-xs">
+                  <div>
+                    <p className="text-[#6B7280] mb-1">一般撮影</p>
+                    <p className="text-[#6B7280] font-bold">{row.general}</p>
+                  </div>
+                  <div>
+                    <p className="text-[#C9A96E] mb-1">当サービス</p>
+                    <p className="text-[#1A2744] font-bold">{row.ours}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

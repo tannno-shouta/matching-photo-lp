@@ -60,8 +60,8 @@ export function Hero() {
         {/* バッジ */}
         <motion.div variants={itemVariants} className="mb-6">
           <span className="inline-flex items-center gap-2 bg-[#C9A96E]/15 border border-[#C9A96E]/50 text-[#C9A96E] text-sm font-bold px-5 py-2.5 rounded-full tracking-widest uppercase">
-            <span className="w-1.5 h-1.5 bg-[#C9A96E] rounded-full animate-pulse inline-block" />
-            福岡No.1 男性向けマッチングアプリ写真撮影
+            <span className="w-1.5 h-1.5 bg-[#C9A96E] rounded-full animate-pulse inline-block" aria-hidden="true" />
+            福岡の男性向け &quot;垢抜け&quot;プロフ撮影
           </span>
         </motion.div>
 
@@ -71,7 +71,7 @@ export function Hero() {
           className="text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] font-bold leading-snug mb-6"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
-          福岡で選ばれてNo.1。<br />
+          マッチングは、
           <span
             style={{
               background: 'linear-gradient(135deg, #C9A96E 0%, #E8C97A 50%, #C9A96E 100%)',
@@ -80,10 +80,10 @@ export function Hero() {
               backgroundClip: 'text',
             }}
           >
-            「美容師の感性」×
+            写真が9割。
           </span>
-          {/* SP: ×の後で改行 / PC(md+): 改行なしで1行に収める */}
-          <br className="md:hidden" />
+          <br />
+          福岡で
           <span
             style={{
               background: 'linear-gradient(135deg, #C9A96E 0%, #E8C97A 50%, #C9A96E 100%)',
@@ -92,9 +92,10 @@ export function Hero() {
               backgroundClip: 'text',
             }}
           >
-            「コンサルの分析力」
-          </span>で、<br />
-          出会いの結果を変える最高の一枚を。
+            垢抜けて
+          </span>
+          、<br />
+          最高の1枚を。
         </motion.h1>
 
         {/* サブコピー */}
@@ -102,13 +103,13 @@ export function Hero() {
           variants={itemVariants}
           className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-4 leading-relaxed"
         >
-          プロが撮れば変わる ── <strong className="text-white">福岡500名の男性</strong>が証明した。
+          撮るだけじゃない。服装・髪・表情を整え、<strong className="text-white">好み女性に刺さるロケ</strong>で撮る&quot;ワンストップ型&quot;。
         </motion.p>
         <motion.p
           variants={itemVariants}
           className="text-base text-white/50 mb-10 tracking-wide"
         >
-          大濠公園・天神・警固公園。会話しながら撮るから、緊張しても自然な笑顔が引き出せます。
+          <strong className="text-white/70">福岡500名の男性</strong>が、写真1枚で出会いを変えた。
         </motion.p>
 
         {/* CTA */}
@@ -123,7 +124,7 @@ export function Hero() {
 
         {/* マイクロコピー */}
         <motion.p variants={itemVariants} className="text-white/40 text-xs -mt-8 mb-4 text-center">
-          返信24時間以内 ・ 相談無料 ・ 予約はLINEで完結
+          返信24h ・ 相談無料 ・ 全プラン&quot;垢抜け&quot;サポート標準装備
         </motion.p>
 
         {/* 実績バッジ */}

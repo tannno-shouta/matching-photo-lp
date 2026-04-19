@@ -12,8 +12,27 @@ export function Pricing() {
         <SectionHeading
           eyebrow="Pricing"
           title="料金プラン"
-          subtitle="初めての方は「スタンダード」が断然おすすめ。60分・10枚・アプリ攻略相談つきで25,000円。今月残り3枠です。"
+          subtitle="全プラン「垢抜け」サポート標準装備。初めての方はスタンダード（60分・10枚・25,000円、今月残り3枠）が断然おすすめ。"
         />
+
+        {/* 標準装備バナー */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex items-center justify-center mb-10 -mt-2"
+        >
+          <span
+            className="inline-flex items-center gap-2 text-[#1A2744] text-xs sm:text-sm font-bold px-5 py-2 rounded-full shadow-sm"
+            style={{
+              background: 'linear-gradient(135deg, #C9A96E 0%, #E8C97A 50%, #C9A96E 100%)',
+            }}
+          >
+            <span className="text-sm">✨</span>
+            全プラン「垢抜け」サポート標準装備
+          </span>
+        </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-start">
           {PRICING_PLANS.map((plan, i) => (

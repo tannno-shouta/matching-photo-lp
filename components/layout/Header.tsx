@@ -7,6 +7,7 @@ import { Button } from '../ui/Button';
 import { LINE_URL, SERVICE_NAME } from '@/lib/constants';
 
 const NAV_ITEMS = [
+  { label: '写真が9割', href: '#why-photos' },
   { label: '選ばれる理由', href: '#reason' },
   { label: 'ポートフォリオ', href: '#portfolio' },
   { label: '料金', href: '#pricing' },
@@ -68,7 +69,7 @@ export function Header() {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="メニュー"
         >
-          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg aria-hidden="true" focusable="false" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
             {isMenuOpen ? (
               <path d="M6 6l12 12M6 18L18 6" />
             ) : (

@@ -64,7 +64,7 @@ export function Testimonials() {
             className="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/10 border border-white/20 rounded-full shadow-md items-center justify-center text-white/70 hover:border-[#C9A96E]/60 hover:text-[#C9A96E] transition-colors duration-200"
             aria-label="前へ"
           >
-            <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <svg aria-hidden="true" focusable="false" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M15 18l-6-6 6-6" />
             </svg>
           </button>
@@ -75,7 +75,7 @@ export function Testimonials() {
             className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/10 border border-white/20 rounded-full shadow-md items-center justify-center text-white/70 hover:border-[#C9A96E]/60 hover:text-[#C9A96E] transition-colors duration-200"
             aria-label="次へ"
           >
-            <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <svg aria-hidden="true" focusable="false" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </button>

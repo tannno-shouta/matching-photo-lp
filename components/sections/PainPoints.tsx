@@ -99,8 +99,9 @@ export function PainPoints() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center text-[#6B7280] mt-10 text-sm"
         >
-          "作りすぎない、でもちゃんとした写真"が最も反応される ── これが{' '}
-          <strong className="text-[#1A2744]">プロのロケーション撮影</strong>で実現できます。
+          「作りすぎない、でもちゃんとした写真」が最も反応される ──
+          <br className="sm:hidden" />
+          では、なぜ<strong className="text-[#1A2744]">写真で9割が決まる</strong>のか？
         </motion.p>
       </div>
     </section>

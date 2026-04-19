@@ -79,7 +79,7 @@ export function BeforeAfterSlider({
         style={{ left: `${position}%`, transform: 'translateX(-50%)' }}
       >
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path d="M7 4l-4 6 4 6M13 4l4 6-4 6" stroke="#1A2744" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </div>

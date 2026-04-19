@@ -9,6 +9,7 @@ const TRUST_ITEMS = [
   '✓ キャンセル料なし（前日まで）',
   '✓ 24時間以内に返信',
   '✓ 写真が苦手な男性も多数実績あり',
+  '✓ 全プラン「垢抜け」サポート標準装備',
 ];
 
 export function BottomCTA() {
@@ -52,7 +53,6 @@ export function BottomCTA() {
             className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            写真を変えれば、
             <span
               style={{
                 background: 'linear-gradient(135deg, #C9A96E 0%, #E8C97A 50%, #C9A96E 100%)',
@@ -61,13 +61,13 @@ export function BottomCTA() {
                 backgroundClip: 'text',
               }}
             >
-              いいねが変わる。
-            </span><br />
-            まず無料相談してみてください。
+              「垢抜け」た1枚
+            </span>で、<br />
+            いいねが変わる。
           </h2>
 
           <p className="text-white/80 text-lg mb-4 leading-relaxed">
-            500名以上の男性が、写真1枚でいいね数を変えてきました。<br />
+            500名以上の男性が、写真1枚で出会いの入口を変えてきました。<br />
             あなたも、<strong className="text-white">今月中に動けば</strong>来月のいいね数が変わります。
           </p>
 
@@ -77,7 +77,7 @@ export function BottomCTA() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href={LINE_URL} external variant="cta" size="lg" pulse className="text-lg">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
               </svg>
               LINEで無料相談する

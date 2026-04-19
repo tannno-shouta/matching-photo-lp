@@ -2,6 +2,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Hero } from '@/components/sections/Hero';
 import { PainPoints } from '@/components/sections/PainPoints';
+import { WhyPhotosMatter } from '@/components/sections/WhyPhotosMatter';
 import { Reason } from '@/components/sections/Reason';
 import { BeforeAfter } from '@/components/sections/BeforeAfter';
 import { Portfolio } from '@/components/sections/Portfolio';
@@ -19,6 +20,7 @@ export default function Home() {
       <main>
         <Hero />
         <PainPoints />
+        <WhyPhotosMatter />
         <Reason />
         <BeforeAfter />
         <Portfolio />

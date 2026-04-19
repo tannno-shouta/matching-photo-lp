@@ -7,6 +7,9 @@ export function Footer() {
         <p className="font-bold text-white text-lg" style={{ fontFamily: 'var(--font-heading)' }}>
           {SERVICE_NAME}
         </p>
+        <p className="text-xs tracking-wider text-[#C9A96E]/90">
+          福岡で、垢抜けて最高の1枚へ。
+        </p>
         <p className="text-sm">福岡市内 / 大濠公園・天神・警固公園エリア</p>
         <div className="flex justify-center gap-6 text-sm">
           <a href={LINE_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
