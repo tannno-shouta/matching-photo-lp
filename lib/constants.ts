@@ -92,21 +92,21 @@ export const LOCATIONS: readonly LocationItem[] = [
     description: '品と余裕が伝わる、落ち着いた大人の空気感。Omiai・with層に刺さる「丁寧に生きてる男性」像を演出。',
     mood: '品・余裕',
     image: '/images/portfolio/p1.jpg',
-    imagePosition: 'center top',
+    imagePosition: 'center 15%',
   },
   {
     name: 'セレクトショップ',
     description: 'おしゃれな空間で"センスある人"の文脈を付与。ファッションコンサル同行プランなら、服選び→撮影まで一連で。',
     mood: '都会的・洗練',
     image: '/images/portfolio/p6.jpg',
-    imagePosition: 'center top',
+    imagePosition: 'center 30%',
   },
   {
     name: '天神・大名の街並み',
     description: '都会的な街中スナップで、映画のワンシーンのような余白ある一枚を。カジュアルすぎず、キメすぎない絶妙な温度感。',
     mood: '都会スナップ',
     image: '/images/locations/tenjin.jpg',
-    imagePosition: 'center top',
+    imagePosition: 'center 40%',
   },
 ];
 
