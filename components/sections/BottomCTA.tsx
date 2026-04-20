@@ -61,7 +61,7 @@ export function BottomCTA() {
                 backgroundClip: 'text',
               }}
             >
-              「垢抜け」た1枚
+              「垢抜けた」1枚
             </span>で、<br />
             いいねが変わる。
           </h2>
