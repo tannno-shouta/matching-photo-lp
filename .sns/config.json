@@ -1,0 +1,17 @@
+{
+  "brand": "福岡垢抜けマッチングフォト",
+  "bioUrl": "https://matching-photo.vercel.app",
+  "model": "claude-sonnet-4-6",
+  "maxChars": { "x": 140, "threads": 280, "default": 140 },
+  "platforms": { "x": true, "threads": true, "facebook": false },
+  "typeMix": { "alpha": 4, "beta": 2, "gamma": 1, "delta": 1 },
+  "files": {
+    "persona": "persona.md",
+    "pillars": "insight-pillars.md",
+    "context": "prompt-context.md",
+    "themes": "themes.json",
+    "typeInstructions": "type-instructions.md",
+    "log": "sns-log.jsonl"
+  },
+  "ngWords": ["絶対", "必ず", "保証", "100%", "最強", "最高", "誰でも"]
+}
