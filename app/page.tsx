@@ -4,6 +4,7 @@ import { Hero } from '@/components/sections/Hero';
 import { PainPoints } from '@/components/sections/PainPoints';
 import { WhyPhotosMatter } from '@/components/sections/WhyPhotosMatter';
 import { Reason } from '@/components/sections/Reason';
+import { PhotographerComparison } from '@/components/sections/PhotographerComparison';
 import { BeforeAfter } from '@/components/sections/BeforeAfter';
 import { Portfolio } from '@/components/sections/Portfolio';
 import { Location } from '@/components/sections/Location';
@@ -24,6 +25,7 @@ export default function Home() {
         <PainPoints />
         <WhyPhotosMatter />
         <Reason />
+        <PhotographerComparison />
         <BeforeAfter />
         <Portfolio />
         <Location />
