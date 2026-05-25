@@ -98,7 +98,7 @@ export const LOCATIONS: readonly LocationItem[] = [
     name: 'セレクトショップ',
     description: 'おしゃれな空間で"センスある人"の文脈を付与。ファッションコンサル同行プランなら、服選び→撮影まで一連で。',
     mood: '都会的・洗練',
-    image: '/images/portfolio/p6.jpg',
+    image: '/images/locations/shop.jpg',
     imagePosition: 'center 30%',
   },
   {
