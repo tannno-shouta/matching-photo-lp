@@ -25,7 +25,7 @@ export function Location() {
               transition={{ duration: 0.5, delay: i * 0.12 }}
               className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#E5E7EB] group"
             >
-              <div className="relative h-48 bg-gradient-to-br from-[#1A2744] to-[#243560]">
+              <div className="relative h-48 sm:h-[187px] bg-gradient-to-br from-[#1A2744] to-[#243560]">
                 <Image
                   src={loc.image}
                   alt={loc.name}
