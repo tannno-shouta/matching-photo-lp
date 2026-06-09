@@ -369,12 +369,7 @@ export const FAQS = [
   {
     question: '支払い方法は何がありますか？',
     answer:
-      '現金・銀行振込・各種キャッシュレス決済（PayPay・クレジットカード等）に対応しています。撮影当日までにお支払いいただく形になります。詳細はLINEでお気軽にご相談ください。',
-  },
-  {
-    question: '写真はLINEで見せるのが恥ずかしいです。',
-    answer:
-      '大丈夫です♪ マッチングアプリ用の写真を撮る方のほとんどが同じ気持ちでスタートしています。担当カメラマンは全員、撮影〜相談まで秘密厳守。「初めてでも安心して相談できた」という声を多くいただいています。',
+      '撮影当日、現金・キャッシュレス（PayPay）にてお支払いをお願いします。詳細はLINEでお気軽にご相談ください。',
   },
 ];
 
@@ -384,7 +379,7 @@ export const FAQS = [
 export const PORTFOLIO_IMAGES = [
   { src: '/images/portfolio/p1.jpg', alt: 'カフェでの撮影例', aspect: 'tall' },
   { src: '/images/portfolio/p2.jpg', alt: '天神大名の街並みでの撮影例', aspect: 'wide' },
-  { src: '/images/portfolio/p3.jpg', alt: 'カフェでの撮影例', aspect: 'square' },
+  { src: '/images/portfolio/p3.jpg', alt: 'テラスでの撮影例', aspect: 'square' },
   { src: '/images/portfolio/p4.jpg', alt: 'ホテルラウンジでの撮影例', aspect: 'tall' },
   { src: '/images/portfolio/p5.jpg', alt: 'セレクトショップでの撮影例', aspect: 'wide' },
   { src: '/images/portfolio/p6.jpg', alt: '街並みでの撮影例', aspect: 'square' },

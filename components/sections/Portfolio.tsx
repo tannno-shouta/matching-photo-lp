@@ -57,7 +57,7 @@ export function Portfolio() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center text-[#6B7280] text-sm mt-8"
         >
-          ※ 掲載写真はすべてお客様の許可を得た実績例です（顔部分は加工しています）
+          ※ 掲載写真はすべてお客様の許可を得た実績例です
         </motion.p>
       </div>
     </section>
