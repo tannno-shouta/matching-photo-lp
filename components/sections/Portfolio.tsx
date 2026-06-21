@@ -15,8 +15,8 @@ export function Portfolio() {
           subtitle="マッチングアプリでいいねされる自然体の写真を、福岡の人気スポットで撮影しています。"
         />
 
-        {/* Masonryっぽいグリッド */}
-        <div className="columns-2 sm:columns-3 gap-4 space-y-4">
+        {/* サイズ統一グリッド */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           {PORTFOLIO_IMAGES.map((img, i) => (
             <motion.div
               key={i}
@@ -24,21 +24,14 @@ export function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="break-inside-avoid rounded-xl overflow-hidden shadow-md group relative"
+              className="rounded-xl overflow-hidden shadow-md group relative"
             >
-              <div
-                className={`relative w-full ${
-                  img.aspect === 'tall'
-                    ? 'aspect-[3/4]'
-                    : img.aspect === 'wide'
-                    ? 'aspect-[4/3]'
-                    : 'aspect-square'
-                } bg-[#E5E7EB]`}
-              >
+              <div className="relative w-full aspect-[3/4] bg-[#E5E7EB]">
                 <Image
                   src={img.src}
                   alt={img.alt}
                   fill
+                  sizes="(max-width: 640px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 {/* ホバーオーバーレイ */}
