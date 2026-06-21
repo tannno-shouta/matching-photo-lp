@@ -16,7 +16,7 @@ export function Portfolio() {
         />
 
         {/* サイズ統一グリッド */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 max-w-3xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           {PORTFOLIO_IMAGES.map((img, i) => (
             <motion.div
               key={i}
