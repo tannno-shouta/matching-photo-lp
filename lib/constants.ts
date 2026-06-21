@@ -85,14 +85,14 @@ export const LOCATIONS: readonly LocationItem[] = [
     description: '"一緒にお茶したい"を直感させる、こなれた日常感。自然光と会話で、力の抜けた表情を引き出します。',
     mood: '爽やか・親近感',
     image: '/images/portfolio/p3.jpg',
-    imagePosition: 'center',
+    imagePosition: 'center 25%',
   },
   {
     name: 'ホテルラウンジ',
     description: '品と余裕が伝わる、落ち着いた大人の空気感。Omiai・with層に刺さる「丁寧に生きてる男性」像を演出。',
     mood: '品・余裕',
     image: '/images/portfolio/p1.jpg',
-    imagePosition: 'center 15%',
+    imagePosition: 'center 35%',
   },
   {
     name: 'セレクトショップ',
