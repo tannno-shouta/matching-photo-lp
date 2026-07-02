@@ -1,0 +1,89 @@
+# matching-photo-lp の SNS 自動投稿（X + Threads）
+# skill 本体 (sns-auto-post) は private repo から clone する（GH_PAT 必要）。
+# 生成・投稿ロジックは skill 側、発信内容の素材は本リポジトリの .sns/ に置く。
+#
+# cron は repo variable SNS_AUTO_POST_ENABLED == 'true' を立てるまで no-op（誤爆防止）。
+# 手動実行 (workflow_dispatch) はいつでも可。初回は必ず dry_run=true で検証すること。
+name: sns-auto-post
+
+on:
+  schedule:
+    # JST 18:00 = UTC 09:00（毎日）
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (生成のみ、投稿しない)"
+        type: boolean
+        default: false
+
+# 同時実行を抑止（ログの push 競合を防ぐ）
+concurrency:
+  group: sns-auto-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    # cron 誤爆防止：手動実行 or 有効化フラグ (repo variable) が立っている時だけ動く
+    if: github.event_name == 'workflow_dispatch' || vars.SNS_AUTO_POST_ENABLED == 'true'
+    permissions:
+      contents: write
+    steps:
+      # persist-credentials: false — npm ci 中の依存パッケージに token を読ませない
+      - name: Checkout LP repo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Checkout sns-auto-post skill (private)
+        uses: actions/checkout@v4
+        with:
+          repository: tannno-shouta/sns-auto-post
+          token: ${{ secrets.GH_PAT }}
+          path: .sns-skill
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install & build skill
+        working-directory: .sns-skill
+        run: |
+          npm ci
+          npm run build
+
+      - name: Generate & post
+        working-directory: .sns-skill
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+        run: |
+          node dist/scripts/run.js \
+            --config ${{ github.workspace }}/.sns/config.json \
+            --dry-run=${{ github.event.inputs.dry_run || 'false' }}
+
+      # 投稿ログ (.sns/sns-log.jsonl) は重複回避の履歴。本リポジトリに commit back する。
+      # 部分失敗 (exit 1) でも投稿済み分のログは残す必要があるため !cancelled() で実行。
+      # dry-run のときはログが書かれないので no-op になる。
+      - name: Commit tweet log
+        if: ${{ !cancelled() && github.event.inputs.dry_run != 'true' }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .sns/sns-log.jsonl
+          if git diff --staged --quiet; then
+            echo "no log changes to commit"
+          else
+            git commit -m "chore(sns): append post log [skip ci]"
+            git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" HEAD:main
+          fi

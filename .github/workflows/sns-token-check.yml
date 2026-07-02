@@ -1,0 +1,43 @@
+# Threads トークンの残日数チェック（週1）
+# 残14日以下・invalid token・期限取得失敗で workflow が失敗し、GitHub からメール通知される。
+# 稼働前（SNS_AUTO_POST_ENABLED 未設定）の cron は no-op。手動実行はいつでも可。
+name: sns-token-check
+
+on:
+  schedule:
+    # JST 月曜 09:00 = UTC 月曜 00:00
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    # 本番稼働前は GH_PAT / Secrets 未登録で毎週失敗するだけなので、同じフラグでガードする
+    if: github.event_name == 'workflow_dispatch' || vars.SNS_AUTO_POST_ENABLED == 'true'
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout sns-auto-post skill (private)
+        uses: actions/checkout@v4
+        with:
+          repository: tannno-shouta/sns-auto-post
+          token: ${{ secrets.GH_PAT }}
+          path: .sns-skill
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install & build skill
+        working-directory: .sns-skill
+        run: |
+          npm ci
+          npm run build
+
+      - name: Check token expiry
+        working-directory: .sns-skill
+        env:
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+        run: node dist/scripts/run.js --check-token
