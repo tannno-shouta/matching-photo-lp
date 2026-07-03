@@ -377,12 +377,12 @@ export const FAQS = [
 // ポートフォリオ（サンプル）
 // ============================
 export const PORTFOLIO_IMAGES = [
-  { src: '/images/portfolio/p1.jpg', alt: 'カフェでの撮影例', aspect: 'tall' },
-  { src: '/images/portfolio/p2.jpg', alt: '天神大名の街並みでの撮影例', aspect: 'wide' },
-  { src: '/images/portfolio/p3.jpg', alt: 'テラスでの撮影例', aspect: 'square' },
-  { src: '/images/portfolio/p4.jpg', alt: 'ホテルラウンジでの撮影例', aspect: 'tall' },
-  { src: '/images/portfolio/p5.jpg', alt: 'セレクトショップでの撮影例', aspect: 'wide' },
-  { src: '/images/portfolio/p6.jpg', alt: '街並みでの撮影例', aspect: 'square' },
+  { src: '/images/portfolio/p1.jpg', alt: 'カフェでの撮影例' },
+  { src: '/images/portfolio/p2.jpg', alt: '天神大名の街並みでの撮影例' },
+  { src: '/images/portfolio/p3.jpg', alt: 'テラスでの撮影例' },
+  { src: '/images/portfolio/p4.jpg', alt: 'ホテルラウンジでの撮影例' },
+  { src: '/images/portfolio/p5.jpg', alt: 'セレクトショップでの撮影例' },
+  { src: '/images/portfolio/p6.jpg', alt: '街並みでの撮影例' },
 ];
 
 // ============================
