@@ -1,6 +1,6 @@
 'use client';
 
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 interface FAQItem {
@@ -29,6 +29,7 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
           <button
             className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left cursor-pointer"
             onClick={() => setOpenIndex(openIndex === i ? null : i)}
+            aria-expanded={openIndex === i}
           >
             <div className="flex items-start gap-3">
               <span className="text-[#C9A96E] font-bold text-lg leading-none mt-0.5">Q</span>
@@ -43,21 +44,21 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
             </motion.span>
           </button>
 
-          <AnimatePresence initial={false}>
-            {openIndex === i && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
-              >
-                <div className="px-6 pb-5 flex gap-3">
-                  <span className="text-[#06C755] font-bold text-lg leading-none mt-0.5 flex-shrink-0">A</span>
-                  <p className="text-[#6B7280] leading-relaxed">{item.answer}</p>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          {/* 回答は常時DOMに置く（height:0で畳む）— JS非実行のAIクローラーにも本文を読ませるため */}
+          <motion.div
+            initial={false}
+            animate={{
+              height: openIndex === i ? 'auto' : 0,
+              opacity: openIndex === i ? 1 : 0,
+            }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="overflow-hidden"
+          >
+            <div className="px-6 pb-5 flex gap-3">
+              <span className="text-[#06C755] font-bold text-lg leading-none mt-0.5 flex-shrink-0">A</span>
+              <p className="text-[#6B7280] leading-relaxed">{item.answer}</p>
+            </div>
+          </motion.div>
         </motion.div>
       ))}
     </div>
