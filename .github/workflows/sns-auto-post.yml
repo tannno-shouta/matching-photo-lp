@@ -3,7 +3,8 @@
 # 生成・投稿ロジックは skill 側、発信内容の素材は本リポジトリの .sns/ に置く。
 #
 # cron は repo variable SNS_AUTO_POST_ENABLED == 'true' を立てるまで no-op（誤爆防止）。
-# 手動実行 (workflow_dispatch) はいつでも可。初回は必ず dry_run=true で検証すること。
+# 手動実行 (workflow_dispatch) はいつでも可。dry_run はデフォルト true（本番投稿はチェックを外す）。
+# 部分失敗（例: X成功/Threads失敗）後の再実行は platforms で対象を絞れる（文面は新規生成される点に注意）。
 name: sns-auto-post
 
 on:
@@ -15,7 +16,11 @@ on:
       dry_run:
         description: "Dry run (生成のみ、投稿しない)"
         type: boolean
-        default: false
+        default: true
+      platforms:
+        description: "対象プラットフォーム (例: threads / x,threads)。空 = config 通り"
+        type: string
+        default: ""
 
 # 同時実行を抑止（ログの push 競合を防ぐ）
 concurrency:
@@ -65,10 +70,13 @@ jobs:
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          # 入力はシェル直埋めせず env 経由で渡す（コマンドインジェクション防止）
+          PLATFORMS: ${{ github.event.inputs.platforms || '' }}
         run: |
           node dist/scripts/run.js \
             --config ${{ github.workspace }}/.sns/config.json \
-            --dry-run=${{ github.event.inputs.dry_run || 'false' }}
+            --dry-run=${{ github.event.inputs.dry_run || 'false' }} \
+            ${PLATFORMS:+--platforms "$PLATFORMS"}
 
       # 投稿ログ (.sns/sns-log.jsonl) は重複回避の履歴。本リポジトリに commit back する。
       # 部分失敗 (exit 1) でも投稿済み分のログは残す必要があるため !cancelled() で実行。
@@ -85,5 +93,7 @@ jobs:
             echo "no log changes to commit"
           else
             git commit -m "chore(sns): append post log [skip ci]"
+            # 実行中に main が進んでいると non-fast-forward で push が落ちてログが失われるため rebase してから push
+            git pull --rebase "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" main
             git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" HEAD:main
           fi
