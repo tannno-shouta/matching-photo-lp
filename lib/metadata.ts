@@ -83,7 +83,7 @@ export const structuredData = {
         longitude: 130.4017,
       },
       areaServed: { '@type': 'City', name: '福岡市' },
-      priceRange: '¥25,000〜¥40,000',
+      priceRange: '¥15,000〜¥30,000',
       openingHours: 'Mo-Su 09:00-21:00',
       knowsAbout: [
         'マッチングアプリ用プロフィール写真',

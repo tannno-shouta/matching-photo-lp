@@ -147,7 +147,7 @@ export const FLOW_STEPS = [
 export const PRICING_PLANS = [
   {
     name: 'スタンダード',
-    price: 25000,
+    price: 15000,
     duration: '60分',
     photos: 10,
     features: [
@@ -162,7 +162,7 @@ export const PRICING_PLANS = [
   },
   {
     name: 'プレミアム',
-    price: 40000,
+    price: 30000,
     duration: '120分',
     photos: 25,
     features: [
