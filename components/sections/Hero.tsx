@@ -1,6 +1,7 @@
 'use client';
 
 import { motion, useReducedMotion, type Variants } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { Button } from '../ui/Button';
 import { AnimatedCounter } from '../ui/AnimatedCounter';
 import { LINE_URL, STATS } from '@/lib/constants';
@@ -17,14 +18,41 @@ const itemVariants: Variants = {
 
 export function Hero() {
   const shouldReduceMotion = useReducedMotion();
+  // 動画はマウント後にのみ挿入（SSRのHTMLには含めない）。省データ・低速回線では出さない
+  const [allowVideo, setAllowVideo] = useState(false);
+  // 自動再生が実際に始まるまで透明のまま（省電力モード等で再生されない環境は静止画のまま）
+  const [videoPlaying, setVideoPlaying] = useState(false);
+
+  useEffect(() => {
+    type ConnectionInfo = { saveData?: boolean; effectiveType?: string };
+    const connection = (navigator as Navigator & { connection?: ConnectionInfo }).connection;
+    const slow = connection?.saveData || /(^|\b)(slow-2g|2g)$/.test(connection?.effectiveType ?? '');
+    if (!slow) setAllowVideo(true);
+  }, []);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* 背景グラデーション（パレット統一版） */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0d1f3c] via-[#1A2744] to-[#1e2d50]" />
 
-      {/* 背景画像オーバーレイ */}
-      <div className="absolute inset-0 bg-[url('/images/hero/hero-bg.jpg')] bg-cover opacity-25" style={{ backgroundPosition: 'center 30%' }} />
+      {/* 背景動画（いいね0→撮影→通知→彼女 の15秒ストーリーループ）。再生されない環境はグラデーションのみ */}
+      {allowVideo && !shouldReduceMotion && (
+        <video
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+          style={{ opacity: videoPlaying ? 0.45 : 0, objectPosition: 'center 30%' }}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          onPlaying={() => setVideoPlaying(true)}
+          aria-hidden="true"
+          tabIndex={-1}
+        >
+          <source src="/videos/hero.webm" type="video/webm" />
+          <source src="/videos/hero.mp4" type="video/mp4" />
+        </video>
+      )}
 
       {/* ノイズテクスチャ */}
       <div
