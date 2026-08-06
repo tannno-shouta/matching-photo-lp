@@ -92,8 +92,8 @@ export const LOCATIONS: readonly LocationItem[] = [
     name: 'ホテルラウンジ',
     description: '品と余裕が伝わる、落ち着いた大人の空気感。Omiai・with層に刺さる「丁寧に生きてる男性」像を演出。',
     mood: '品・余裕',
-    image: '/images/portfolio/p1.jpg',
-    imagePosition: 'center 35%',
+    image: '/images/locations/hotel-lounge.jpg',
+    imagePosition: 'center 40%',
   },
   {
     name: 'セレクトショップ',
@@ -103,11 +103,11 @@ export const LOCATIONS: readonly LocationItem[] = [
     imagePosition: 'center 30%',
   },
   {
-    name: '天神・大名の街並み',
+    name: '街並み',
     description: '都会的な街中スナップで、映画のワンシーンのような余白ある一枚を。カジュアルすぎず、キメすぎない絶妙な温度感。',
     mood: '都会スナップ',
-    image: '/images/locations/tenjin.jpg',
-    imagePosition: 'center 40%',
+    image: '/images/portfolio/p2.jpg',
+    imagePosition: 'center 30%',
   },
 ];
 
@@ -195,7 +195,7 @@ export const PHOTOGRAPHERS: readonly Photographer[] = [
     name: 'shota',
     role: '代表 / 垢抜けディレクター',
     badge: '代表',
-    imageSrc: null,
+    imageSrc: '/images/before-after/after.jpg',
     careers: [
       '美容師 8年',
       'ファッションコンサル 3年',
@@ -209,10 +209,10 @@ export const PHOTOGRAPHERS: readonly Photographer[] = [
     social: null,
   },
   {
-    name: 'ハマ',
+    name: 'hama',
     role: '専属カメラマン',
     badge: 'カメラマン',
-    imageSrc: null,
+    imageSrc: '/images/photographers/hama.jpg',
     careers: ['カメラマン歴 2年', '福岡のロケーション熟知', '自然な表情・ポージング指導'],
     strengths:
       '被写体の緊張をほぐしながら、会話の中で自然な表情を引き出すのが得意。福岡の撮影スポットに精通し、あなたの魅力を一番引き出す角度を見つけます。',
@@ -381,9 +381,9 @@ export const PORTFOLIO_IMAGES = [
   { src: '/images/portfolio/p1.jpg', alt: 'カフェでの撮影例' },
   { src: '/images/portfolio/p2.jpg', alt: '天神大名の街並みでの撮影例' },
   { src: '/images/portfolio/p3.jpg', alt: 'テラスでの撮影例' },
-  { src: '/images/portfolio/p4.jpg', alt: 'ホテルラウンジでの撮影例' },
+  { src: '/images/portfolio/hotel-lounge.jpg', alt: 'ホテルラウンジでの撮影例' },
   { src: '/images/portfolio/p5.jpg', alt: 'セレクトショップでの撮影例' },
-  { src: '/images/portfolio/p6.jpg', alt: '街並みでの撮影例' },
+  { src: '/images/portfolio/poolside.jpg', alt: 'プールサイドでの撮影例' },
 ];
 
 // ============================
