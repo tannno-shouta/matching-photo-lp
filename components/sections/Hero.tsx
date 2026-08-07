@@ -38,7 +38,7 @@ export function Hero() {
       {/* 背景動画（いいね0→撮影→通知→彼女 の15秒ストーリーループ）。再生されない環境はグラデーションのみ */}
       {allowVideo && !shouldReduceMotion && (
         <video
-          className="absolute inset-x-0 top-[27%] -translate-y-1/2 w-full aspect-video object-cover [mask-image:linear-gradient(to_bottom,transparent,black_18%,black_82%,transparent)] sm:inset-0 sm:top-0 sm:translate-y-0 sm:h-full sm:aspect-auto sm:[mask-image:none] transition-opacity duration-1000"
+          className="absolute inset-x-0 top-[27%] -translate-y-1/2 w-full aspect-[16/11] object-cover [mask-image:linear-gradient(to_bottom,transparent,black_18%,black_82%,transparent)] sm:inset-0 sm:top-0 sm:translate-y-0 sm:h-full sm:aspect-auto sm:[mask-image:none] transition-opacity duration-1000"
           style={{ opacity: videoPlaying ? 0.45 : 0, objectPosition: 'center 30%' }}
           autoPlay
           muted
