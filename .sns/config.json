@@ -1,6 +1,6 @@
 {
   "brand": "福岡垢抜けマッチングフォト",
-  "bioUrl": "https://matching-photo.vercel.app",
+  "bioUrl": "https://matching-photo-lp.vercel.app",
   "model": "claude-sonnet-4-6",
   "maxChars": { "x": 140, "threads": 280, "default": 140 },
   "platforms": { "x": true, "threads": true, "facebook": false },

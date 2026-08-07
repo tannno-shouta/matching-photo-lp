@@ -9,7 +9,7 @@
 
 ## URL
 
-- LP: https://matching-photo.vercel.app
+- LP: https://matching-photo-lp.vercel.app
 - LINE 相談: （LP の bio リンクから）
 
 ## サービスの構造（差別化軸）

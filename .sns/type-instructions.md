@@ -149,7 +149,7 @@
 同じ料理人でも、食材が違えば結果が違う。
 それと同じ話。
 
-→ matching-photo.vercel.app
+→ matching-photo-lp.vercel.app
 ```
 
 ```
@@ -198,7 +198,7 @@
 ただし、撮るだけのサービスだと素材は変わらない。
 撮る前の "垢抜け" まで含めて整える、という選択肢。
 
-→ matching-photo.vercel.app
+→ matching-photo-lp.vercel.app
 ```
 
 **例文（深層訴求・自信/関係性）**:
@@ -213,5 +213,5 @@
 
 福岡で、撮る前から整える、という選択肢。
 
-→ matching-photo.vercel.app
+→ matching-photo-lp.vercel.app
 ```
