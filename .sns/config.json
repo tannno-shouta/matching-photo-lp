@@ -3,7 +3,7 @@
   "bioUrl": "https://matching-photo-lp.vercel.app",
   "model": "claude-sonnet-4-6",
   "maxChars": { "x": 140, "threads": 280, "default": 140 },
-  "platforms": { "x": true, "threads": true, "facebook": false },
+  "platforms": { "x": true, "threads": false, "facebook": false },
   "typeMix": { "alpha": 4, "beta": 2, "gamma": 1, "delta": 1, "epsilon": 2 },
   "files": {
     "persona": "persona.md",
