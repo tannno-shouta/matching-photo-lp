@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { SERVICE_NAME, SITE_URL, FAQS, PRICING_PLANS, LOCATIONS } from './constants';
+import { SERVICE_NAME, SITE_URL, LINE_URL, FAQS, PRICING_PLANS, LOCATIONS } from './constants';
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -110,7 +110,7 @@ export const structuredData = {
       availableChannel: {
         '@type': 'ServiceChannel',
         name: 'LINE無料相談',
-        serviceUrl: SITE_URL,
+        serviceUrl: LINE_URL,
       },
       offers: PRICING_PLANS.map((plan) => ({
         '@type': 'Offer',

@@ -3,7 +3,7 @@
 // ============================
 export const SERVICE_NAME = '福岡垢抜けマッチングフォト';
 export const SITE_URL = 'https://matching-photo.vercel.app'; // 独自ドメイン取得時はここを変更
-export const LINE_URL = 'https://line.me/R/ti/p/@your-line-id'; // 実際のLINE IDに変更
+export const LINE_URL = 'https://lin.ee/9n1N6b9';
 export const BOOKING_URL = '#contact';
 
 // ============================
