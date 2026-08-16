@@ -21,6 +21,10 @@ on:
         description: "対象プラットフォーム (例: threads / x,threads)。空 = config 通り"
         type: string
         default: ""
+      text:
+        description: "手動指定の投稿文（指定時は生成スキップ・type=manual。改行入りは gh CLI から）"
+        type: string
+        default: ""
 
 # 同時実行を抑止（ログの push 競合を防ぐ）
 concurrency:
@@ -72,11 +76,13 @@ jobs:
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
           # 入力はシェル直埋めせず env 経由で渡す（コマンドインジェクション防止）
           PLATFORMS: ${{ github.event.inputs.platforms || '' }}
+          POST_TEXT: ${{ github.event.inputs.text || '' }}
         run: |
           node dist/scripts/run.js \
             --config ${{ github.workspace }}/.sns/config.json \
             --dry-run=${{ github.event.inputs.dry_run || 'false' }} \
-            ${PLATFORMS:+--platforms "$PLATFORMS"}
+            ${PLATFORMS:+--platforms "$PLATFORMS"} \
+            ${POST_TEXT:+--text "$POST_TEXT"}
 
       # 投稿ログ (.sns/sns-log.jsonl) は重複回避の履歴。本リポジトリに commit back する。
       # 部分失敗 (exit 1) でも投稿済み分のログは残す必要があるため !cancelled() で実行。
