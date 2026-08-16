@@ -2,7 +2,7 @@
 // サービス基本情報
 // ============================
 export const SERVICE_NAME = '福岡垢抜けマッチングフォト';
-export const SITE_URL = 'https://matching-photo.vercel.app'; // 独自ドメイン取得時はここを変更
+export const SITE_URL = 'https://matching-photo-lp.vercel.app'; // 独自ドメイン取得時はここを変更
 export const LINE_URL = 'https://lin.ee/9n1N6b9';
 export const BOOKING_URL = '#contact';
 

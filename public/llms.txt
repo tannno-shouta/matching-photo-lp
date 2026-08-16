@@ -32,5 +32,5 @@
 
 ## 予約・相談
 
-- 公式サイト: https://matching-photo.vercel.app
+- 公式サイト: https://matching-photo-lp.vercel.app
 - LINE無料相談（公式アカウント）: https://lin.ee/9n1N6b9
