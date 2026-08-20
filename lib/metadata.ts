@@ -33,9 +33,11 @@ export const siteMetadata: Metadata = {
     siteName: SERVICE_NAME,
     images: [
       {
-        url: '/images/hero/hero-bg.jpg',
-        width: 1201,
-        height: 1362,
+        // X / Facebook のカードは 1.91:1 の横長のみ正しく描画される。
+        // 縦長画像を渡すとカードが画像なしのプレースホルダになるため 1200x630 固定。
+        url: '/images/og/og-image.jpg',
+        width: 1200,
+        height: 630,
         alt: '福岡で"垢抜け"プロフィール写真撮影',
       },
     ],
@@ -47,7 +49,7 @@ export const siteMetadata: Metadata = {
     title: '福岡で"垢抜け"プロフィール写真【男性専用】｜いいね数2.4倍の実績',
     description:
       '写真が9割。福岡で"垢抜け"→撮影までオールインワン型。好み女性から逆算したロケで撮る、男性専用のマッチ率アップサービス。いいね数2.4倍・マッチ率63%向上の実績。',
-    images: ['/images/hero/hero-bg.jpg'],
+    images: ['/images/og/og-image.jpg'],
   },
   robots: {
     index: true,
