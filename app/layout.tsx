@@ -1,7 +1,13 @@
 import type { Metadata } from 'next';
 import { Noto_Sans_JP, Noto_Serif_JP, Cormorant_Garamond } from 'next/font/google';
+import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 import { siteMetadata, structuredData } from '@/lib/metadata';
+
+// Microsoft Clarity（ヒートマップ / セッション再生）。
+// 環境変数が未設定の間はタグ自体を出さないため、ID 取得前でも安全にデプロイできる。
+const clarityProjectId = process.env.NEXT_PUBLIC_CLARITY_ID;
 
 const notoSans = Noto_Sans_JP({
   variable: '--font-noto-sans',
@@ -45,7 +51,17 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <Analytics />
+        {clarityProjectId && (
+          <Script
+            id="ms-clarity"
+            strategy="afterInteractive"
+            src={`https://www.clarity.ms/tag/${clarityProjectId}`}
+          />
+        )}
+      </body>
     </html>
   );
 }

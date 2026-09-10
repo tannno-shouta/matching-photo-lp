@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { LINE_URL, SERVICE_NAME } from '@/lib/constants';
 
 export function Footer() {
@@ -11,12 +12,16 @@ export function Footer() {
           福岡で、垢抜けて最高の1枚へ。
         </p>
         <p className="text-sm">福岡市内 / 天神・大名・薬院エリア中心</p>
-        <div className="flex justify-center gap-6 text-sm">
+        {/* 下層ページ（/privacy 等）からも辿れるよう、アンカーはルート起点で指定する */}
+        <div className="flex justify-center flex-wrap gap-x-6 gap-y-2 text-sm">
           <a href={LINE_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
             LINEで相談
           </a>
-          <a href="#faq" className="hover:text-white transition-colors">よくある質問</a>
-          <a href="#pricing" className="hover:text-white transition-colors">料金プラン</a>
+          <a href="/#faq" className="hover:text-white transition-colors">よくある質問</a>
+          <a href="/#pricing" className="hover:text-white transition-colors">料金プラン</a>
+          <Link href="/privacy" className="hover:text-white transition-colors">
+            プライバシーポリシー
+          </Link>
         </div>
         <p className="text-xs text-white/40">© {new Date().getFullYear()} {SERVICE_NAME}. All rights reserved.</p>
       </div>
